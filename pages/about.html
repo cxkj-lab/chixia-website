@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于赤瑕 | 青岛赤瑕科技有限公司</title>
+<link rel="stylesheet" href="../css/shared.css">
+<style>
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 120px 60px 60px;
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #0a0e1a, #060914);
+  }
+  .page-header::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 50%, rgba(142,31,49,0.2) 0%, transparent 55%);
+  }
+  .page-header-inner { position: relative; z-index: 1; max-width: 900px; }
+  .page-header h1 {
+    font-family: "Noto Serif SC", serif; font-size: clamp(32px, 5vw, 56px);
+    font-weight: 900; line-height: 1.2; letter-spacing: 2px; margin-bottom: 14px;
+  }
+  .page-header h1 em { font-style: normal; color: var(--gold); }
+  .page-header p { font-size: 15px; line-height: 2; color: var(--text-2); max-width: 620px; }
+
+  /* ── MILESTONES ── */
+  .milestones { padding: 80px 60px; background: var(--bg); }
+  .milestones-header { margin-bottom: 52px; }
+  .milestone-list { max-width: 900px; }
+  .milestone {
+    display: grid; grid-template-columns: 80px 1fr; gap: 32px; margin-bottom: 48px;
+    position: relative; padding-left: 20px;
+  }
+  .milestone::before {
+    content: ""; position: absolute; left: 39px; top: 48px; bottom: -48px; width: 1px;
+    background: linear-gradient(180deg, var(--gold), rgba(213,174,96,0.1));
+  }
+  .milestone:last-child::before { display: none; }
+  .milestone-num {
+    width: 80px; height: 80px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(142,31,49,0.8), rgba(180,54,77,0.6));
+    border: 1px solid rgba(213,174,96,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Noto Serif SC", serif; font-size: 28px; font-weight: 900;
+    color: var(--gold-soft); align-self: start;
+  }
+  .milestone-body h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--gold-soft); }
+  .milestone-body p { font-size: 14px; line-height: 1.9; color: var(--text-2); }
+  .milestone-body .milestone-tag {
+    display: inline-block; margin-top: 10px; padding: 5px 12px; border-radius: 999px;
+    border: 1px solid var(--line); background: rgba(255,255,255,0.02);
+    font-size: 10px; letter-spacing: 1.5px; color: var(--gold); text-transform: uppercase;
+  }
+
+  /* ── FLOW SECTION ── */
+  .flow-section { padding: 80px 60px; background: var(--bg-2); }
+  .flow-header { margin-bottom: 52px; }
+  .flow-diagram { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
+  .flow-step-card {
+    border-radius: var(--radius); border: 1px solid var(--line);
+    background: var(--panel); padding: 28px 22px; text-align: center;
+    position: relative; transition: border-color 0.3s;
+  }
+  .flow-step-card:hover { border-color: var(--line-2); }
+  .flow-step-card::after {
+    content: "→"; position: absolute; right: -18px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--gold); z-index: 2;
+  }
+  .flow-step-card:last-child::after { display: none; }
+  .flow-step-icon { font-size: 32px; margin-bottom: 16px; }
+  .flow-step-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--gold-soft); }
+  .flow-step-desc { font-size: 12px; line-height: 1.8; color: var(--text-2); }
+
+  /* ── STATS SECTION ── */
+  .stats-section { padding: 80px 60px; background: var(--bg); }
+
+  /* ── VISION ── */
+  .vision-section { padding: 80px 60px; background: var(--bg-2); }
+  .vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 48px; }
+  .vision-copy h3 { font-size: 28px; font-weight: 700; color: var(--gold-soft); margin-bottom: 16px; }
+  .vision-copy p { font-size: 14px; line-height: 2; color: var(--text-2); margin-bottom: 14px; }
+  .vision-copy .vision-quote {
+    margin-top: 24px; padding: 20px 24px; border-left: 3px solid var(--gold);
+    background: rgba(213,174,96,0.05); border-radius: 0 12px 12px 0;
+    font-family: "Noto Serif SC", serif; font-size: 16px; line-height: 1.9; color: var(--gold-soft);
+  }
+  .vision-photo { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+  .vision-photo img { width: 100%; height: 380px; object-fit: contain; object-position: center; background: #0a0e1a; }
+
+  /* ── BRAND SHOWCASE ── */
+  .brand-section { padding: 80px 60px; background: var(--bg); }
+  .brand-header { margin-bottom: 48px; text-align: center; }
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .brand-card {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--bg-3);
+    aspect-ratio: 4/3;
+    transition: all 0.4s;
+  }
+  .brand-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+  .brand-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  /* ── NAV ACTIVE ── */
+  .nav-links a[href="about.html"] { color: var(--gold) !important; }
+
+  /* Section headers: left-align titles and body text */
+  .section-eyebrow, .section-title { text-align: left; }
+  .section-lead { margin: 0; }
+
+  @media (max-width: 1100px) {
+    .page-header, .milestones, .flow-section, .stats-section, .vision-section, .brand-section { padding-left: 30px; padding-right: 30px; }
+    .flow-diagram { grid-template-columns: repeat(2,1fr); }
+    .flow-step-card::after { display: none; }
+    .vision-grid { grid-template-columns: 1fr; }
+    .brand-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .page-header { padding: 100px 18px 48px; }
+    .milestones, .flow-section, .stats-section, .vision-section { padding-left: 18px; padding-right: 18px; }
+    .milestone { grid-template-columns: 56px 1fr; gap: 18px; }
+    .milestone-num { width: 56px; height: 56px; font-size: 22px; }
+    .flow-diagram { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/logo.png" alt="赤瑕科技" class="nav-logo-img">
+    <span class="nav-logo-text">赤瑕科技</span>
+  </a>
+  <div class="nav-links">
+    <a href="about.html" class="active">关于</a>
+    <a href="products.html">产品</a>
+    <a href="factory.html">工厂</a>
+    <a href="jewelry.html">珠宝</a>
+    <a href="tech.html">技术</a>
+    <a href="ai.html">AI 能力</a>
+    <a href="contact.html" class="nav-cta">联系我们</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-eyebrow">Company Profile</div>
+    <h1>培育彩宝的<br><em>技术驱动者</em></h1>
+    <p>赤瑕科技起步于光学级红宝石晶体生长，大体积单晶突破后进入珠宝级培育彩宝市场。</p>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar reveal">
+  <div class="stat-item"><div class="stat-num">2024</div><div class="stat-label">创立年份</div><div class="stat-desc">青岛城阳</div></div>
+  <div class="stat-item"><div class="stat-num">2+1</div><div class="stat-label">生产线</div><div class="stat-desc">2条单晶线+1条加工线</div></div>
+  <div class="stat-item"><div class="stat-num">40台</div><div class="stat-label">长晶炉</div><div class="stat-desc">1500㎡ · 厂房规模</div></div>
+  <div class="stat-item"><div class="stat-num">5T/年</div><div class="stat-label">年产能</div><div class="stat-desc">持续扩产中</div></div>
+</div>
+
+<!-- MILESTONES -->
+<section class="milestones">
+  <div class="milestones-header">
+    <div class="section-eyebrow">Development Path</div>
+    <h2 class="section-title">四大发展里程碑</h2>
+    <p class="section-lead">从光学级红宝石到全色系培育彩宝，每一步都建立在核心技术壁垒之上。</p>
+  </div>
+  <div class="milestone-list reveal">
+    <div class="milestone">
+      <div class="milestone-num">01</div>
+      <div class="milestone-body">
+        <h3>起步于光学级红宝石</h3>
+        <p>起步于光学级红宝石，在大体积单晶突破后进入珠宝级培育彩宝市场，积累深厚长晶工艺壁垒，掌握温梯法核心技术参数。</p>
+        <div class="milestone-tag">技术积累期</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-num">02</div>
+      <div class="milestone-body">
+        <h3>鸽血红量产突破</h3>
+        <p>温梯法鸽血红实现稳定量产，小尺寸鸽血红填补行业空白，颜色纯度与晶体完整度持续提升。</p>
+        <div class="milestone-tag">市场领先期</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-num">03</div>
+      <div class="milestone-body">
+        <h3>一体化材料链路</h3>
+        <p>两条单晶线、一条加工线，打通长晶、加工、分级与定制，实现从原料到成品的闭环。全程品质可控，无需外发加工。</p>
+        <div class="milestone-tag">全链路整合</div>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-num">04</div>
+      <div class="milestone-body">
+        <h3>向全色系延展</h3>
+        <p>从鸽血红出发，向帕帕拉恰、蓝宝石、紫色宝石与绿色 YAG 延展，持续拓展颜色边界。</p>
+        <div class="milestone-tag">全球化布局</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW DIAGRAM -->
+<section class="flow-section">
+  <div class="flow-header">
+    <div class="section-eyebrow">Production Chain</div>
+    <h2 class="section-title">全链路生产闭环</h2>
+    <p class="section-lead">从长晶到成品，赤瑕自主完成全部关键工序，品质全程可控。</p>
+  </div>
+  <div class="flow-diagram reveal">
+    <div class="flow-step-card">
+      <div class="flow-step-icon">🔥</div>
+      <div class="flow-step-title">晶体生长</div>
+      <div class="flow-step-desc">温梯法长晶，40台炉台 AI 持续感知，精准控制生长参数</div>
+    </div>
+    <div class="flow-step-card">
+      <div class="flow-step-icon">⚙️</div>
+      <div class="flow-step-title">加工切割</div>
+      <div class="flow-step-desc">自主加工线完成切割、打磨与抛光，标准化切工流程</div>
+    </div>
+    <div class="flow-step-card">
+      <div class="flow-step-icon">📊</div>
+      <div class="flow-step-title">分级检测</div>
+      <div class="flow-step-desc">按颜色、净度、尺寸分级，数据记录全程可追溯</div>
+    </div>
+    <div class="flow-step-card">
+      <div class="flow-step-icon">💎</div>
+      <div class="flow-step-title">定制成品</div>
+      <div class="flow-step-desc">支持裸石定制与成品加工，满足品牌与设计师需求</div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision-section">
+  <div class="section-eyebrow">Vision</div>
+  <h2 class="section-title">愿景与使命</h2>
+  <div class="vision-grid reveal">
+    <div class="vision-copy">
+      <h3>以晶体技术为核心，构建全球彩色材料平台</h3>
+      <p>赤瑕科技以晶体生长能力与 AI 数据闭环为双核，向更多彩色材料延展，持续拓展彩宝边界。</p>
+      <p>已触达全球头部红宝石激光棒代理商，国际市场同步推进。发明专利持续申报中，知识产权壁垒不断加固。</p>
+      <div class="vision-quote">"晶体决定上限" — 这是赤瑕的技术哲学，也是产品承诺。</div>
+    </div>
+    <div class="vision-photo">
+      <img src="../assets/photo-selects/round-02/optimized/office-logo-wall.jpg" alt="赤瑕科技">
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-brand"><img src="../assets/logo.png" alt="赤瑕科技" class="footer-logo"><span class="footer-text">青岛赤瑕科技有限公司</span></div>
+  <div class="footer-copy">© 2024 Chixia Technology. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="about.html">关于</a><a href="products.html">产品</a><a href="factory.html">工厂</a><a href="jewelry.html">珠宝</a><a href="tech.html">技术</a><a href="ai.html">AI</a><a href="contact.html">联系</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

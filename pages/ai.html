@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 能力 | 青岛赤瑕科技有限公司</title>
+<link rel="stylesheet" href="../css/shared.css">
+<style>
+  .page-header { padding: 120px 60px 60px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0e1a, #060914); }
+  .page-header::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(142,31,49,0.2) 0%, transparent 55%); }
+  .page-header-inner { position: relative; z-index: 1; }
+  .page-header h1 { font-family: "Noto Serif SC", serif; font-size: clamp(32px,5vw,56px); font-weight: 900; line-height: 1.2; letter-spacing: 2px; margin-bottom: 14px; }
+  .page-header h1 em { font-style: normal; color: var(--gold); }
+  .page-header p { font-size: 15px; line-height: 2; color: var(--text-2); max-width: 620px; }
+
+  /* ── AI SHELL ── */
+  .ai-section { padding: 80px 60px; }
+  .ai-shell {
+    border-radius: var(--radius); border: 1px solid rgba(134,184,255,0.14);
+    background: linear-gradient(180deg, rgba(14,19,35,0.98), rgba(8,12,24,1));
+    padding: 48px; position: relative; overflow: hidden; box-shadow: var(--shadow);
+  }
+  .ai-shell::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      repeating-linear-gradient(90deg, rgba(134,184,255,0.03) 0 1px, transparent 1px 60px),
+      repeating-linear-gradient(180deg, rgba(134,184,255,0.02) 0 1px, transparent 1px 60px),
+      radial-gradient(circle at 18% 16%, rgba(92,132,196,0.16), transparent 28%),
+      radial-gradient(circle at 84% 18%, rgba(213,174,96,0.08), transparent 24%);
+  }
+  .ai-inner { position: relative; z-index: 1; }
+  .ai-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 12px; }
+  .ai-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .ai-pill {
+    padding: 6px 14px; border-radius: 999px;
+    border: 1px solid rgba(213,174,96,0.10); background: rgba(255,255,255,0.03);
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-3); transition: all 0.3s;
+  }
+  .ai-pill.on { background: rgba(213,174,96,0.10); border-color: rgba(213,174,96,0.22); color: var(--gold-soft); }
+  .ai-live {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px; border-radius: 999px;
+    border: 1px solid rgba(100,148,210,0.18); background: rgba(100,148,210,0.08);
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(207,223,246,0.92);
+  }
+  .ai-live-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #86b8ff; box-shadow: 0 0 10px rgba(134,184,255,0.9);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+  /* ── AI HERO GRID ── */
+  .ai-hero-row { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 18px; margin-bottom: 18px; }
+  .ai-master {
+    border-radius: var(--radius-sm); border: 1px solid rgba(213,174,96,0.10);
+    background: rgba(255,255,255,0.03); padding: 28px; position: relative; overflow: hidden;
+  }
+  .ai-master::after {
+    content: ""; position: absolute; right: -36px; top: -36px;
+    width: 130px; height: 130px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(213,174,96,0.18), transparent 70%);
+  }
+  .ai-kicker { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .ai-master-title { font-size: 26px; font-weight: 700; color: var(--gold-soft); margin-bottom: 10px; }
+  .ai-master p { font-size: 12px; line-height: 1.9; color: var(--text-2); }
+  .ai-signals { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .ai-sig { padding: 7px 11px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.025); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-2); }
+  .ai-side-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ai-side-card { border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.06); background: rgba(5,8,16,0.22); padding: 18px 14px; }
+  .ai-side-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .ai-side-value { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .ai-side-note  { font-size: 10px; color: var(--text-3); }
+
+  /* ── AI CARDS ── */
+  .ai-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .ai-card { border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.025); padding: 20px 16px; }
+  .ai-card-tag { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(207,223,246,0.78); margin-bottom: 8px; }
+  .ai-card-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  .ai-card p { font-size: 11px; line-height: 1.8; color: var(--text-3); }
+
+  /* ── AI STREAM ── */
+  .ai-stream { margin-top: 18px; border-radius: var(--radius-sm); border: 1px solid rgba(213,174,96,0.10); background: rgba(255,255,255,0.02); overflow: hidden; }
+  .ai-stream-row { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 20px; }
+  .ai-stream-row + .ai-stream-row { border-top: 1px solid rgba(255,255,255,0.05); }
+  .ai-stream-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); padding-top: 2px; }
+  .ai-stream-text  { font-size: 12px; line-height: 1.8; color: var(--text-2); }
+
+  /* ── FUTURE ── */
+  .future-section { padding: 80px 60px; background: var(--bg-2); }
+  .future-header { margin-bottom: 48px; }
+  .future-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 0; }
+  .future-copy {
+    border-radius: var(--radius); border: 1px solid rgba(158,196,255,0.12);
+    background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(112,150,214,0.04));
+    padding: 36px 28px; position: relative; overflow: hidden;
+  }
+  .future-copy::after { content: ""; position: absolute; right: -50px; top: -60px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(120,170,255,0.26), transparent 72%); }
+  .future-kicker { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .future-title  { font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--gold-soft); margin-bottom: 12px; }
+  .future-copy p { font-size: 13px; line-height: 1.9; color: var(--text-2); margin-bottom: 14px; }
+  .future-mode { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 8px 16px; border-radius: 999px; border: 1px solid rgba(100,148,210,0.22); background: linear-gradient(90deg, rgba(94,138,208,0.16), rgba(30,47,86,0.20)); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(222,233,248,0.96); }
+  .future-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+  .future-fact { padding: 16px 14px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.06); background: rgba(5,8,16,0.26); }
+  .future-fact strong { display: block; font-size: 28px; font-weight: 700; color: var(--gold-soft); }
+  .future-fact span { display: block; margin-top: 5px; font-size: 11px; color: var(--text-2); line-height: 1.7; }
+  .future-visual {
+    border-radius: var(--radius); border: 1px solid rgba(158,196,255,0.12);
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(112,150,214,0.04));
+    display: flex; flex-direction: column; justify-content: center; padding: 36px; gap: 12px;
+  }
+  .ai-viz-node { padding: 14px 18px; border-radius: 999px; border: 1px solid rgba(134,184,255,0.18); background: rgba(255,255,255,0.05); font-size: 12px; letter-spacing: 1.5px; color: rgba(214,228,248,0.94); text-align: center; }
+  .ai-viz-center { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; border-radius: 50%; aspect-ratio: 1; border: 1px solid rgba(213,174,96,0.20); background: radial-gradient(circle at 50% 36%, rgba(124,169,238,0.26), rgba(9,13,24,0.95) 72%); box-shadow: 0 0 40px rgba(65,107,175,0.28); }
+  .ai-viz-center-kicker { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .ai-viz-center-title { font-size: 20px; font-weight: 700; color: var(--gold-soft); }
+
+  /* ── CONTROL CABINET PHOTO ── */
+  .cabinet-section { padding: 80px 60px; }
+  .cabinet-photo { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); margin-top: 48px; }
+  .cabinet-photo img { width: 100%; height: auto; max-height: 520px; object-fit: contain; object-position: center; background: #0a0e1a; display: block; }
+  .cabinet-caption { padding: 18px 24px; border-top: 1px solid var(--line); }
+  .cabinet-caption .cc-kicker { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .cabinet-caption .cc-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .cabinet-caption .cc-desc { font-size: 12px; color: var(--text-2); }
+
+  /* ── NAV ACTIVE ── */
+  .nav-links a[href="ai.html"] { color: var(--gold) !important; }
+
+  /* Section headers: left-align titles and body text */
+  .section-eyebrow, .section-title { text-align: left; }
+  .section-lead { margin: 0; }
+
+  @media (max-width: 1100px) {
+    .page-header, .ai-section, .future-section, .cabinet-section { padding-left: 30px; padding-right: 30px; }
+    .ai-hero-row { grid-template-columns: 1fr; }
+    .future-grid { grid-template-columns: 1fr; }
+    .ai-cards { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .page-header { padding: 100px 18px 48px; }
+    .ai-section, .future-section, .cabinet-section { padding-left: 18px; padding-right: 18px; }
+    .ai-cards { grid-template-columns: 1fr; }
+    .ai-side-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="赤瑕科技" class="nav-logo-img"><span class="nav-logo-text">赤瑕科技</span></a>
+  <div class="nav-links">
+    <a href="about.html">关于</a><a href="products.html">产品</a><a href="factory.html">工厂</a>
+    <a href="jewelry.html">珠宝</a><a href="tech.html">技术</a><a href="ai.html" class="active">AI 能力</a>
+    <a href="contact.html" class="nav-cta">联系我们</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-eyebrow">AI Integration</div>
+    <h1>AI 深度接入<em>全链路</em></h1>
+    <p>AI 已深度接入研发、生产、财务与行政，40 台炉台持续感知，数据闭环驱动决策。</p>
+  </div>
+</div>
+
+<!-- AI MAIN -->
+<section class="ai-section">
+  <div class="section-eyebrow">Core System</div>
+  <h2 class="section-title">智能感知 · 数据闭环</h2>
+  <p class="section-lead">40 台炉台，AI 持续感知生长状态。控制、回写、异常检测，同一主控完成，数据实时回写决策系统。</p>
+
+  <div class="ai-shell reveal">
+    <div class="ai-inner">
+      <div class="ai-top">
+        <div class="ai-pills">
+          <div class="ai-pill on">研发</div>
+          <div class="ai-pill">生产</div>
+          <div class="ai-pill">财务</div>
+          <div class="ai-pill">行政</div>
+        </div>
+        <div class="ai-live"><div class="ai-live-dot"></div>实时在线</div>
+      </div>
+      <div class="ai-hero-row">
+        <div class="ai-master">
+          <div class="ai-kicker">AI Core</div>
+          <div class="ai-master-title">智能感知 · 数据闭环</div>
+          <p>40 台炉台，AI 持续感知生长状态。控制、回写、异常检测，同一主控完成，数据实时回写决策系统。</p>
+          <div class="ai-signals">
+            <span class="ai-sig">温度场建模</span>
+            <span class="ai-sig">成核预测</span>
+            <span class="ai-sig">缺陷识别</span>
+            <span class="ai-sig">产量预测</span>
+            <span class="ai-sig">工艺优化</span>
+          </div>
+        </div>
+        <div class="ai-side-grid">
+          <div class="ai-side-card">
+            <div class="ai-side-label">在线炉台</div>
+            <div class="ai-side-value">40 台</div>
+            <div class="ai-side-note">全部数据联通</div>
+          </div>
+          <div class="ai-side-card">
+            <div class="ai-side-label">数据采集</div>
+            <div class="ai-side-value">秒级</div>
+            <div class="ai-side-note">实时感知闭环</div>
+          </div>
+          <div class="ai-side-card">
+            <div class="ai-side-label">异常响应</div>
+            <div class="ai-side-value">&lt;30s</div>
+            <div class="ai-side-note">自动触发处置</div>
+          </div>
+          <div class="ai-side-card">
+            <div class="ai-side-label">决策链路</div>
+            <div class="ai-side-value">端到端</div>
+            <div class="ai-side-note">感知→分析→执行</div>
+          </div>
+        </div>
+      </div>
+      <div class="ai-cards">
+        <div class="ai-card">
+          <div class="ai-card-tag">数据采集</div>
+          <div class="ai-card-title">生长参数实时采集</div>
+          <p>温度、压力、浓度、晶体形态全程记录，为工艺优化提供数据基础。</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-tag">异常检测</div>
+          <div class="ai-card-title">生长异常秒级响应</div>
+          <p>AI 实时监测，提前预警，自动触发处置机制，降低批次损失。</p>
+        </div>
+        <div class="ai-card">
+          <div class="ai-card-tag">工艺优化</div>
+          <div class="ai-card-title">持续迭代生长配方</div>
+          <p>历史数据驱动算法持续优化长晶参数，颜色一致性与产能同步提升。</p>
+        </div>
+      </div>
+      <div class="ai-stream">
+        <div class="ai-stream-row">
+          <div class="ai-stream-label">Live Factory</div>
+          <div class="ai-stream-text">40 台炉台，AI 持续感知，实时呈现生长状态与数据看板。</div>
+        </div>
+        <div class="ai-stream-row">
+          <div class="ai-stream-label">Control Link</div>
+          <div class="ai-stream-text">控制参数、回写数据、异常告警，同一主控系统完成全链路闭环。</div>
+        </div>
+        <div class="ai-stream-row">
+          <div class="ai-stream-label">Data Loop</div>
+          <div class="ai-stream-text">采集 → 分析 → 决策 → 执行 → 反馈，数据闭环驱动持续优化。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTROL CABINET PHOTO -->
+<section class="cabinet-section">
+  <div class="section-eyebrow">Production Photos</div>
+  <h2 class="section-title">设备与控制端</h2>
+  <div class="cabinet-photo reveal">
+    <img src="../assets/photo-selects/round-02/optimized/plant-control-cabinet.jpg" alt="设备与控制柜">
+    <div class="cabinet-caption">
+      <div class="cc-kicker">智能控制</div>
+      <div class="cc-title">设备与控制柜</div>
+      <div class="cc-desc">最能说明设备本体和控制端放在同一画面，适合讲智能控制、流程接管和设备稳定性。</div>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE -->
+<section class="future-section">
+  <div class="future-header">
+    <div class="section-eyebrow">Future Vision</div>
+    <h2 class="section-title">材料 × AI · 无限延展</h2>
+    <p class="section-lead">从彩宝出发，以晶体生长能力与 AI 数据闭环为双核，向更多彩色材料延展，构建全球化材料平台。</p>
+  </div>
+  <div class="future-grid reveal">
+    <div class="future-copy">
+      <div class="future-kicker">Dual Core · Global Platform</div>
+      <div class="future-title">材料平台<br>无限延展</div>
+      <p>从彩宝出发，以晶体生长能力与 AI 数据闭环为双核，向更多彩色材料延展。</p>
+      <p>发明专利持续申报中。</p>
+      <div class="future-mode">◆ 晶体生长 × AI 数据闭环</div>
+    </div>
+    <div class="future-visual">
+      <div class="ai-viz-node">晶体生长建模</div>
+      <div class="ai-viz-center">
+        <div class="ai-viz-center-kicker">Chixia AI</div>
+        <div class="ai-viz-center-title">材料平台</div>
+      </div>
+      <div class="ai-viz-node">全链路数据闭环</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand"><img src="../assets/logo.png" alt="赤瑕科技" class="footer-logo"><span class="footer-text">青岛赤瑕科技有限公司</span></div>
+  <div class="footer-copy">© 2024 Chixia Technology. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="about.html">关于</a><a href="products.html">产品</a><a href="factory.html">工厂</a><a href="jewelry.html">珠宝</a><a href="tech.html">技术</a><a href="ai.html">AI</a><a href="contact.html">联系</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

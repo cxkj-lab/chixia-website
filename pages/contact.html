@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系我们 | 青岛赤瑕科技有限公司</title>
+<link rel="stylesheet" href="../css/shared.css">
+<style>
+  /* ── HERO SECTION ── */
+  .contact-hero {
+    position: relative; min-height: 70vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .contact-hero-bg {
+    position: absolute; inset: -10%;
+    z-index: 1;
+  }
+  .contact-hero-bg img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.35) saturate(1.2);
+  }
+  .contact-hero-overlay {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(142,31,49,0.25) 0%, transparent 60%),
+      linear-gradient(180deg, rgba(6,9,20,0.4) 0%, transparent 30%, rgba(6,9,20,0.9) 100%);
+    z-index: 2;
+  }
+  
+  .contact-hero-content {
+    position: relative; z-index: 10;
+    text-align: center; padding: 0 40px;
+  }
+  .contact-hero-eyebrow {
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 24px;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp 0.8s 0.3s forwards;
+  }
+  .contact-hero-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: clamp(42px, 7vw, 80px); font-weight: 900;
+    line-height: 1.1; letter-spacing: 6px; margin-bottom: 24px;
+    color: var(--text);
+    opacity: 0; transform: translateY(30px);
+    animation: fadeUp 0.8s 0.5s forwards;
+  }
+  .contact-hero-title em { font-style: normal; color: var(--gold); }
+  .contact-hero-desc {
+    font-size: 16px; line-height: 2.2; color: var(--text-2);
+    max-width: 600px; margin: 0 auto 40px;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp 0.8s 0.7s forwards;
+  }
+  .contact-hero-line {
+    width: 80px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1s 0.9s forwards;
+  }
+  
+  @keyframes fadeUp {
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  /* ── CONTACT CARDS ── */
+  .contact-section { padding: 100px 60px 120px; background: var(--bg); }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  
+  .contact-card {
+    position: relative; overflow: hidden;
+    padding: 48px 44px;
+    border-radius: 28px;
+    border: 1px solid rgba(213,174,96,0.15);
+    background: linear-gradient(145deg, rgba(13,18,34,0.95), rgba(8,12,24,0.98));
+    backdrop-filter: blur(20px);
+    box-shadow: 
+      0 40px 80px rgba(0,0,0,0.4),
+      inset 0 1px 0 rgba(213,174,96,0.08);
+    transition: all 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .contact-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(213,174,96,0.3);
+    box-shadow: 
+      0 50px 100px rgba(0,0,0,0.5),
+      0 0 40px rgba(213,174,96,0.08),
+      inset 0 1px 0 rgba(213,174,96,0.12);
+  }
+  
+  .contact-card-icon {
+    width: 64px; height: 64px; margin-bottom: 28px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(142,31,49,0.25), rgba(180,54,77,0.15));
+    border: 1px solid rgba(213,174,96,0.2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    transition: all 0.4s;
+  }
+  .contact-card:hover .contact-card-icon {
+    background: linear-gradient(135deg, rgba(142,31,49,0.35), rgba(180,54,77,0.25));
+    border-color: var(--gold);
+    transform: scale(1.05);
+  }
+  .contact-card-icon svg { width: 28px; height: 28px; }
+  
+  .contact-card-label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  .contact-card-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: 24px; font-weight: 700; letter-spacing: 2px;
+    color: var(--text); margin-bottom: 16px;
+  }
+  .contact-card-value {
+    font-size: 15px; line-height: 2; color: var(--text-2);
+    letter-spacing: 0.5px;
+  }
+  
+  /* 大卡片样式 */
+  .contact-card.large {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .contact-card.large .contact-card-left {
+    padding-right: 32px;
+    border-right: 1px solid rgba(213,174,96,0.12);
+  }
+  
+  /* ── MAP PLACEHOLDER ── */
+  .contact-map {
+    position: relative;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(13,18,34,0.8), rgba(8,12,24,0.9));
+    border: 1px solid rgba(213,174,96,0.1);
+  }
+  .contact-map-inner {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 16px;
+  }
+  .contact-map-pin {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--ruby), var(--ruby-2));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(142,31,49,0.4);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 8px 24px rgba(142,31,49,0.4); }
+    50% { box-shadow: 0 8px 40px rgba(142,31,49,0.6), 0 0 20px rgba(213,174,96,0.3); }
+  }
+  .contact-map-pin svg { width: 24px; height: 24px; color: var(--gold-soft); }
+  .contact-map-text {
+    font-size: 13px; color: var(--text-2); letter-spacing: 1px;
+  }
+
+  /* ── COOPERATION ── */
+  .coop-section { padding: 100px 60px; background: var(--bg-2); }
+  .coop-header { text-align: center; margin-bottom: 64px; }
+  
+  .coop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  
+  .coop-card {
+    position: relative; overflow: hidden;
+    padding: 48px 36px;
+    border-radius: 24px;
+    border: 1px solid rgba(213,174,96,0.1);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    text-align: center;
+    transition: all 0.4s;
+  }
+  .coop-card::before {
+    content: "";
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transition: width 0.4s;
+  }
+  .coop-card:hover::before { width: 60%; }
+  .coop-card:hover {
+    border-color: rgba(213,174,96,0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  }
+  
+  .coop-icon {
+    width: 72px; height: 72px; margin: 0 auto 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(142,31,49,0.2), rgba(180,54,77,0.1));
+    border: 1px solid rgba(213,174,96,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+    transition: all 0.4s;
+  }
+  .coop-card:hover .coop-icon {
+    background: linear-gradient(135deg, rgba(142,31,49,0.3), rgba(180,54,77,0.2));
+    border-color: var(--gold);
+    transform: scale(1.08);
+  }
+  
+  .coop-card h4 {
+    font-family: "Noto Serif SC", serif;
+    font-size: 20px; font-weight: 700; letter-spacing: 3px;
+    color: var(--gold-soft); margin-bottom: 16px;
+  }
+  .coop-card p {
+    font-size: 14px; line-height: 2; color: var(--text-2);
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    padding: 120px 60px;
+    background: linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+  }
+  .cta-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: clamp(28px, 4vw, 42px); font-weight: 700;
+    letter-spacing: 4px; color: var(--text);
+    margin-bottom: 24px;
+  }
+  .cta-desc {
+    font-size: 15px; line-height: 2.2; color: var(--text-2);
+    max-width: 500px; margin: 0 auto 40px;
+  }
+  .cta-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+  /* ── NAV ACTIVE ── */
+  .nav-links a[href="contact.html"] { color: var(--gold-soft) !important; }
+
+  @media (max-width: 1100px) {
+    .contact-hero { min-height: 60vh; }
+    .contact-section, .coop-section, .cta-section { padding-left: 30px; padding-right: 30px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+    .contact-card.large { grid-column: span 1; grid-template-columns: 1fr; }
+    .contact-card.large .contact-card-left { padding-right: 0; border-right: none; }
+    .coop-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .contact-hero { min-height: 50vh; }
+    .contact-hero-content { padding: 0 20px; }
+    .contact-section, .coop-section, .cta-section { padding-left: 20px; padding-right: 20px; }
+    .contact-card { padding: 32px 28px; }
+    .coop-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/logo.png" alt="赤瑕科技" class="nav-logo-img">
+    <span class="nav-logo-text">赤瑕科技</span>
+  </a>
+  <div class="nav-links">
+    <a href="about.html">关于</a>
+    <a href="products.html">产品</a>
+    <a href="factory.html">工厂</a>
+    <a href="jewelry.html">珠宝</a>
+    <a href="tech.html">技术</a>
+    <a href="ai.html">AI 能力</a>
+    <a href="contact.html" class="active nav-cta">联系我们</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="contact-hero-bg">
+    <img src="../assets/photo-selects/round-02/optimized/plant-furnace-aisle-center.jpg" alt="">
+  </div>
+  <div class="contact-hero-overlay"></div>
+  <div class="contact-hero-content">
+    <div class="contact-hero-eyebrow">Contact Us</div>
+    <h1 class="contact-hero-title">商务<em>合作</em></h1>
+    <p class="contact-hero-desc">欢迎珠宝品牌、加工商、代理商与科研机构洽谈合作，赤瑕科技期待与您共创培育彩宝新纪元。</p>
+    <div class="contact-hero-line"></div>
+  </div>
+</section>
+
+<!-- CONTACT INFO -->
+<section class="contact-section">
+  <div class="contact-grid">
+    <!-- 大卡片：公司信息 -->
+    <div class="contact-card large reveal">
+      <div class="contact-card-left">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+        </div>
+        <div class="contact-card-label">Company</div>
+        <h3 class="contact-card-title">青岛赤瑕科技有限公司</h3>
+        <p class="contact-card-value">专注于培育彩宝研发与生产，以温梯法为核心技术，致力于为珠宝行业提供高品质、稳定的培育宝石产品。</p>
+      </div>
+      <div class="contact-card-right">
+        <div class="contact-map">
+          <div class="contact-map-inner">
+            <div class="contact-map-pin">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C12 22 20 16 20 10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10C4 16 12 22 12 22Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span class="contact-map-text">山东省 · 青岛市 · 城阳区</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 产品 -->
+    <div class="contact-card reveal">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="contact-card-label">Products</div>
+      <h3 class="contact-card-title">主营产品</h3>
+      <p class="contact-card-value">培育鸽血红 · 帕帕拉恰<br>全色系彩宝 · 定制开发</p>
+    </div>
+    
+    <!-- 产能 -->
+    <div class="contact-card reveal">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M6 20V4M18 20V14"/></svg>
+      </div>
+      <div class="contact-card-label">Capacity</div>
+      <h3 class="contact-card-title">年产能</h3>
+      <p class="contact-card-value">5 吨 / 年<br>持续扩产中</p>
+    </div>
+  </div>
+</section>
+
+<!-- COOPERATION -->
+<section class="coop-section">
+  <div class="coop-header">
+    <div class="section-eyebrow">Cooperation</div>
+    <h2 class="section-title">合作模式</h2>
+    <p class="section-lead">赤瑕支持多种合作模式，灵活适配不同客户需求。</p>
+  </div>
+  <div class="coop-grid reveal">
+    <div class="coop-card">
+      <div class="coop-icon">💎</div>
+      <h4>珠宝品牌</h4>
+      <p>批量供货、定制镶嵌、品牌联名<br>支持白标与专属颜色开发</p>
+    </div>
+    <div class="coop-card">
+      <div class="coop-icon">⚙️</div>
+      <h4>加工商</h4>
+      <p>切割裸石供应，标准规格与定制尺寸<br>支持长期稳定供货</p>
+    </div>
+    <div class="coop-card">
+      <div class="coop-icon">🌏</div>
+      <h4>代理商</h4>
+      <p>区域代理、渠道合作<br>国际市场拓展</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h3 class="cta-title">晶体决定上限</h3>
+  <p class="cta-desc">赤瑕科技以技术驱动品质，期待与您携手共创培育彩宝的无限可能。</p>
+  <div class="cta-btns">
+    <a href="../index.html" class="btn-primary">返回首页</a>
+    <a href="products.html" class="btn-ghost">查看产品</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand"><img src="../assets/logo.png" alt="赤瑕科技" class="footer-logo"><span class="footer-text">青岛赤瑕科技有限公司</span></div>
+  <div class="footer-copy">© 2024 Chixia Technology. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="about.html">关于</a><a href="products.html">产品</a><a href="factory.html">工厂</a>
+    <a href="jewelry.html">珠宝</a><a href="tech.html">技术</a><a href="ai.html">AI</a><a href="contact.html">联系</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

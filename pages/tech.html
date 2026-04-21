@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技术优势 | 青岛赤瑕科技有限公司</title>
+<link rel="stylesheet" href="../css/shared.css">
+<style>
+  .page-header { padding: 120px 60px 60px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0e1a, #060914); }
+  .page-header::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(142,31,49,0.2) 0%, transparent 55%); }
+  .page-header-inner { position: relative; z-index: 1; }
+  .page-header h1 { font-family: "Noto Serif SC", serif; font-size: clamp(32px,5vw,56px); font-weight: 900; line-height: 1.2; letter-spacing: 2px; margin-bottom: 14px; }
+  .page-header h1 em { font-style: normal; color: var(--gold); }
+  .page-header p { font-size: 15px; line-height: 2; color: var(--text-2); max-width: 620px; }
+
+  /* ── RADAR SECTION ── */
+  .radar-section { padding: 80px 60px; }
+  .radar-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 48px; }
+  .radar-wrap {
+    border-radius: var(--radius); border: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(14,19,35,0.98), rgba(9,13,26,0.98));
+    padding: 32px; text-align: center; box-shadow: var(--shadow);
+  }
+  .radar-wrap h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 20px; letter-spacing: 1px; }
+  .radar-legend { display: flex; justify-content: center; gap: 24px; margin-top: 16px; }
+  .radar-legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--text-2); }
+  .radar-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-gold   { background: var(--gold); }
+  .dot-silver { background: rgba(178,178,178,0.75); }
+  .dot-blue   { background: rgba(100,148,210,0.75); }
+
+  /* ── ADVANTAGES ── */
+  .adv-section { padding: 80px 60px; background: var(--bg-2); }
+  .adv-section-header { margin-bottom: 48px; }
+  .adv-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .adv-card {
+    padding: 28px 24px; border-radius: var(--radius); border: 1px solid var(--line);
+    background: rgba(255,255,255,0.015); transition: border-color 0.3s, background 0.3s;
+  }
+  .adv-card:hover { border-color: var(--line-2); background: rgba(255,255,255,0.03); }
+  .adv-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+  .adv-icon {
+    width: 40px; height: 40px; border-radius: 12px;
+    background: rgba(213,174,96,0.08); border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: var(--gold); flex-shrink: 0;
+  }
+  .adv-card h4 { font-size: 16px; font-weight: 600; color: var(--gold-soft); }
+  .adv-card p  { font-size: 13px; line-height: 1.85; color: var(--text-2); margin-top: 10px; }
+
+  /* ── SPECS ── */
+  .specs-section { padding: 80px 60px; }
+  .specs-header { margin-bottom: 48px; }
+  .specs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .spec-card {
+    padding: 28px 20px; border-radius: var(--radius); border: 1px solid var(--line);
+    background: var(--panel); text-align: center; transition: border-color 0.3s;
+  }
+  .spec-card:hover { border-color: var(--line-2); }
+  .spec-icon { font-size: 26px; margin-bottom: 14px; }
+  .spec-k { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .spec-v { font-family: "Noto Serif SC", serif; font-size: 30px; font-weight: 700; color: var(--gold-soft); line-height: 1; margin-bottom: 6px; }
+  .spec-desc { font-size: 12px; color: var(--text-2); line-height: 1.7; }
+
+  /* ── BRAND PHOTO ── */
+  .brand-section { padding: 80px 60px; background: var(--bg-2); }
+  .brand-photo {
+    border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
+    box-shadow: var(--shadow); margin-top: 48px;
+  }
+  .brand-photo img {
+    width: 100%; height: auto; max-height: 480px;
+    object-fit: contain; object-position: center; background: #0a0e1a; display: block;
+  }
+
+  /* ── NAV ACTIVE ── */
+  .nav-links a[href="tech.html"] { color: var(--gold) !important; }
+
+  /* Section headers: left-align titles and body text */
+  .adv-section-header,
+  .specs-header,
+  .brand-section > .section-eyebrow,
+  .brand-section > .section-title {
+    text-align: left;
+  }
+  .adv-section-header .section-lead,
+  .specs-header .section-lead,
+  .brand-section .section-lead,
+  .radar-section .section-lead {
+    margin: 0;
+  }
+
+  @media (max-width: 1100px) {
+    .page-header, .radar-section, .adv-section, .specs-section, .brand-section { padding-left: 30px; padding-right: 30px; }
+    .radar-layout { grid-template-columns: 1fr; }
+    .adv-grid { grid-template-columns: 1fr; }
+    .specs-grid { grid-template-columns: repeat(2,1fr); }
+  }
+  @media (max-width: 768px) {
+    .page-header { padding: 100px 18px 48px; }
+    .radar-section, .adv-section, .specs-section, .brand-section { padding-left: 18px; padding-right: 18px; }
+    .specs-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="赤瑕科技" class="nav-logo-img"><span class="nav-logo-text">赤瑕科技</span></a>
+  <div class="nav-links">
+    <a href="about.html">关于</a><a href="products.html">产品</a><a href="factory.html">工厂</a>
+    <a href="jewelry.html">珠宝</a><a href="tech.html" class="active">技术</a><a href="ai.html">AI 能力</a>
+    <a href="contact.html" class="nav-cta">联系我们</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-eyebrow">Technical Advantages</div>
+    <h1>颜色 · 尺寸 · <em>供给</em></h1>
+    <p>温梯法工艺六维均衡，颜色、尺寸与供给同时成立，区别于焰熔法与提拉法。</p>
+  </div>
+</div>
+
+<!-- RADAR CHART -->
+<section class="radar-section">
+  <div class="section-eyebrow">Process Comparison</div>
+  <h2 class="section-title">工艺方法对比</h2>
+  <p class="section-lead">六维雷达图直观展示赤瑕温梯法在色彩纯度、晶体完整、尺寸上限、成本控制、量产规模与工艺稳定性上的综合优势。</p>
+  <div class="radar-layout">
+    <div class="radar-wrap reveal">
+      <h3>培育彩宝工艺六维雷达图</h3>
+      <svg width="340" height="300" viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Grid -->
+        <g fill="none" stroke="rgba(134,184,255,0.08)" stroke-width="1">
+          <polygon points="170,30 272,96 272,204 170,270 68,204 68,96" />
+          <polygon points="170,58 244,112 244,188 170,242 96,188 96,112" />
+          <polygon points="170,86 216,128 216,172 170,214 124,172 124,128" />
+        </g>
+        <!-- Axes -->
+        <g stroke="rgba(134,184,255,0.15)" stroke-width="1">
+          <line x1="170" y1="150" x2="170" y2="30"/><line x1="170" y1="150" x2="272" y2="96"/>
+          <line x1="170" y1="150" x2="272" y2="204"/><line x1="170" y1="150" x2="170" y2="270"/>
+          <line x1="170" y1="150" x2="68" y2="204"/><line x1="170" y1="150" x2="68" y2="96"/>
+        </g>
+        <!-- Labels -->
+        <g font-size="11" fill="rgba(245,241,232,0.55)" font-family="PingFang SC,sans-serif" text-anchor="middle">
+          <text x="170" y="22">色彩纯度</text>
+          <text x="284" y="94">晶体完整</text>
+          <text x="284" y="212">尺寸上限</text>
+          <text x="170" y="286">成本控制</text>
+          <text x="56" y="212">量产规模</text>
+          <text x="56" y="94">工艺稳定</text>
+        </g>
+        <!-- 焰熔法 (silver) -->
+        <polygon points="170,116 238,136 238,172 170,216 102,172 102,136"
+          fill="rgba(178,178,178,0.12)" stroke="rgba(178,178,178,0.65)" stroke-width="1.5"/>
+        <!-- 提拉法 (blue) -->
+        <polygon points="170,94 248,122 248,170 170,222 92,170 92,122"
+          fill="rgba(100,148,210,0.10)" stroke="rgba(100,148,210,0.65)" stroke-width="1.5"/>
+        <!-- 赤瑕温梯法 (gold) -->
+        <polygon points="170,52 268,104 268,190 170,250 72,190 72,104"
+          fill="rgba(213,174,96,0.18)" stroke="rgba(213,174,96,0.88)" stroke-width="2"/>
+        <!-- Legend dots at bottom -->
+      </svg>
+      <div class="radar-legend">
+        <div class="radar-legend-item"><div class="radar-dot dot-gold"></div>赤瑕温梯法</div>
+        <div class="radar-legend-item"><div class="radar-dot dot-silver"></div>焰熔法</div>
+        <div class="radar-legend-item"><div class="radar-dot dot-blue"></div>提拉法</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <h3 style="font-size:20px;font-weight:700;color:var(--gold-soft);margin-bottom:16px;">为什么是温梯法？</h3>
+      <div style="display:grid;gap:14px;">
+        <div style="padding:16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,0.015);">
+          <div style="font-size:13px;font-weight:600;color:var(--gold-soft);margin-bottom:6px;">焰熔法（Verneuil）</div>
+          <div style="font-size:12px;color:var(--text-2);line-height:1.8;">成本低，但晶体缺陷率高、尺寸受限、颜色不均。适合低成本工业用途，不适合高端珠宝。</div>
+        </div>
+        <div style="padding:16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,0.015);">
+          <div style="font-size:13px;font-weight:600;color:var(--gold-soft);margin-bottom:6px;">提拉法（Czochralski）</div>
+          <div style="font-size:12px;color:var(--text-2);line-height:1.8;">晶体质量较好，但大尺寸受限，设备成本高，工艺控制复杂，难以规模化量产。</div>
+        </div>
+        <div style="padding:16px;border-radius:14px;border:1px solid var(--line-2);background:rgba(213,174,96,0.05);">
+          <div style="font-size:13px;font-weight:600;color:var(--gold-soft);margin-bottom:6px;">温梯法（赤瑕）✓</div>
+          <div style="font-size:12px;color:var(--text-2);line-height:1.8;">晶体完整、颜色纯正、尺寸可控、产能稳定。唯一能同时满足颜色、尺寸、供给三端的工艺路线。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="adv-section">
+  <div class="adv-section-header">
+    <div class="section-eyebrow">Core Advantages</div>
+    <h2 class="section-title">四大核心优势</h2>
+    <p class="section-lead">赤瑕在颜色控制、尺寸范围、规模化供给与全链路整合上的综合领先。</p>
+  </div>
+  <div class="adv-grid reveal">
+    <div class="adv-card">
+      <div class="adv-head"><div class="adv-icon">◆</div><h4>颜色控制</h4></div>
+      <p>温梯法精准控制晶体生长环境，色彩饱和度与色调稳定一致。鸽血红色值长期稳定，无批次差异，满足高端珠宝品牌对颜色一致性的严格要求。</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-head"><div class="adv-icon">◇</div><h4>尺寸范围</h4></div>
+      <p>从毫米级到克拉级全覆盖。大尺寸用于雕刻与高端定制，小尺寸用于标准珠宝成品，能力完整。突破大体积鸽血红培育瓶颈是赤瑕的核心壁垒。</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-head"><div class="adv-icon">▲</div><h4>规模化供给</h4></div>
+      <p>40 台长晶炉稳定运行，年产能 5 吨，支持批量供货与持续补货。已触达全球头部红宝石激光棒代理商，国际市场同步推进。</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-head"><div class="adv-icon">★</div><h4>全链路整合</h4></div>
+      <p>从长晶、加工到分级、定制，一条链路闭环。无需外发加工，品质全程可控。自主加工线完成切割、打磨与抛光，标准化切工流程。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs-section">
+  <div class="specs-header">
+    <div class="section-eyebrow">Company Data</div>
+    <h2 class="section-title">核心数据</h2>
+    <p class="section-lead">从创立规模到产能数据，全面了解赤瑕科技的硬实力。</p>
+  </div>
+  <div class="specs-grid reveal">
+    <div class="spec-card">
+      <div class="spec-icon">🏭</div><div class="spec-k">Founded</div><div class="spec-v">2024</div>
+      <div class="spec-desc">青岛城阳 · 自主研发基地</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">⚙️</div><div class="spec-k">Lines</div><div class="spec-v">2+1</div>
+      <div class="spec-desc">2条单晶线 + 1条加工线</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🔥</div><div class="spec-k">Furnaces</div><div class="spec-v">40台</div>
+      <div class="spec-desc">1500㎡ · 厂房规模</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">💎</div><div class="spec-k">Capacity</div><div class="spec-v">5T/年</div>
+      <div class="spec-desc">持续扩产，支持批量供货</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🔬</div><div class="spec-k">R&D</div><div class="spec-v">持续</div>
+      <div class="spec-desc">多色系同步研发</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🧠</div><div class="spec-k">AI</div><div class="spec-v">AI+</div>
+      <div class="spec-desc">40台炉台持续感知，数据闭环</div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND PHOTO -->
+<section class="brand-section">
+  <div class="section-eyebrow">Brand Identity</div>
+  <h2 class="section-title">品牌识别</h2>
+  <div class="brand-photo reveal">
+    <img src="../assets/photo-selects/round-02/optimized/office-logo-wall.jpg" alt="品牌墙">
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand"><img src="../assets/logo.png" alt="赤瑕科技" class="footer-logo"><span class="footer-text">青岛赤瑕科技有限公司</span></div>
+  <div class="footer-copy">© 2024 Chixia Technology. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="about.html">关于</a><a href="products.html">产品</a><a href="factory.html">工厂</a><a href="jewelry.html">珠宝</a><a href="tech.html">技术</a><a href="ai.html">AI</a><a href="contact.html">联系</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

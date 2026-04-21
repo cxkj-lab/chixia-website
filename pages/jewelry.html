@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>珠宝成品 | 青岛赤瑕科技有限公司</title>
+<link rel="stylesheet" href="../css/shared.css">
+<style>
+  .page-header { padding: 120px 60px 60px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0e1a, #060914); }
+  .page-header::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(142,31,49,0.2) 0%, transparent 55%); }
+  .page-header-inner { position: relative; z-index: 1; }
+  .page-header h1 { font-family: "Noto Serif SC", serif; font-size: clamp(32px,5vw,56px); font-weight: 900; line-height: 1.2; letter-spacing: 2px; margin-bottom: 14px; }
+  .page-header h1 em { font-style: normal; color: var(--gold); }
+  .page-header p { font-size: 15px; line-height: 2; color: var(--text-2); max-width: 620px; }
+
+  /* ── JEWELRY SPLITS ── */
+  .jewelry-section { padding: 60px 60px; }
+  .jewelry-section:nth-child(even) { background: var(--bg-2); }
+  .jewelry-split { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px; align-items: center; margin-top: 48px; }
+  .jewelry-split.reverse { grid-template-columns: 0.8fr 1.2fr; }
+  .jewelry-split.reverse .jewelry-visual { order: 1; }
+  .jewelry-split.reverse .jewelry-info  { order: 2; }
+
+  .jewelry-visual {
+    border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
+    box-shadow: var(--shadow); background: #0a0e1a;
+  }
+  .jewelry-visual {
+    border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
+    box-shadow: var(--shadow); background: #0a0e1a;
+    aspect-ratio: 4/3;
+  }
+  .jewelry-visual img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center; display: block;
+  }
+
+  .jewelry-info .jk { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .jewelry-info h3 { font-family: "Noto Serif SC", serif; font-size: 26px; font-weight: 700; color: var(--gold-soft); margin-bottom: 6px; }
+  .jewelry-info .jk-en { font-size: 12px; color: var(--text-3); margin-bottom: 18px; letter-spacing: 1px; }
+  .jewelry-info p  { font-size: 14px; line-height: 1.9; color: var(--text-2); margin-bottom: 14px; }
+  .jewelry-info .jk-spec { font-size: 12px; color: var(--text-3); border-left: 2px solid var(--gold); padding-left: 12px; margin-top: 14px; }
+
+  /* ── CRYSTAL GALLERY ── */
+  .crystal-section { padding: 60px 60px; }
+  .crystal-section-header { margin-bottom: 48px; text-align: left; }
+  .crystal-section-header .section-lead { margin: 0; }
+  .crystal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .crystal-card {
+    border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
+    background: var(--bg-3); box-shadow: var(--shadow);
+  }
+  .crystal-card img {
+    width: 100%; height: auto; display: block;
+  }
+  .crystal-card .cc-body { padding: 18px 20px; border-top: 1px solid var(--line); }
+  .crystal-card .cc-kicker { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .crystal-card .cc-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .crystal-card .cc-desc { font-size: 12px; color: var(--text-2); }
+
+  /* ── DESIGN GALLERY ── */
+  .design-section { padding: 60px 60px; background: var(--bg-2); }
+  .design-header { margin-bottom: 48px; text-align: left; }
+  .design-header .section-title { text-align: left; }
+  .design-header .section-lead { text-align: left; margin: 0; }
+  .design-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .design-card {
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--bg-3);
+    aspect-ratio: 3/4;
+  }
+  .design-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .design-card:hover img {
+    transform: scale(1.05);
+  }
+
+  /* ── MORE PRODUCTS ── */
+  .more-section { padding: 60px 60px; }
+  .more-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .more-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .more-card:hover {
+    border-color: rgba(213,174,96,0.4);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    z-index: 10;
+  }
+  .more-card-img {
+    position: relative;
+    overflow: hidden;
+    background: #0a0e1a;
+  }
+  .more-card-img img {
+    width: 100%; height: auto;
+    display: block;
+    transition: transform 0.6s;
+  }
+  .more-card:hover .more-card-img img {
+    transform: scale(1.05);
+  }
+  .more-card-img::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(6,9,20,0.9) 100%);
+    pointer-events: none;
+  }
+  .more-card-badge {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: rgba(213,174,96,0.2);
+    border: 1px solid rgba(213,174,96,0.4);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    backdrop-filter: blur(8px);
+    z-index: 2;
+  }
+  .more-card-title {
+    position: absolute;
+    bottom: 16px; left: 16px;
+    font-family: "Noto Serif SC", serif;
+    font-size: 15px; font-weight: 600;
+    color: #fff;
+    z-index: 2;
+  }
+  .more-card-detail {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 60px 16px 16px;
+    background: linear-gradient(180deg, rgba(6,9,20,0.95), rgba(6,9,20,0.8));
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    z-index: 3;
+  }
+  .more-card:hover .more-card-detail {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .more-card-detail-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: 16px; font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .more-card-detail-desc {
+    font-size: 12px;
+    color: var(--text-2);
+    line-height: 1.6;
+  }
+  .more-card-detail-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .more-card-detail-spec {
+    background: rgba(213,174,96,0.1);
+    border: 1px solid rgba(213,174,96,0.2);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 10px;
+    color: var(--text-2);
+  }
+
+  /* ── NAV ACTIVE ── */
+  .nav-links a[href="jewelry.html"] { color: var(--gold) !important; }
+
+  @media (max-width: 1100px) {
+    .page-header, .jewelry-section, .crystal-section, .design-section, .more-section { padding-left: 30px; padding-right: 30px; }
+    .jewelry-split, .jewelry-split.reverse { grid-template-columns: 1fr; gap: 32px; }
+    .jewelry-split.reverse .jewelry-visual, .jewelry-split.reverse .jewelry-info { order: unset; }
+    .crystal-grid { grid-template-columns: 1fr; }
+    .design-grid { grid-template-columns: repeat(2, 1fr); }
+    .more-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .page-header { padding: 100px 18px 48px; }
+    .jewelry-section, .crystal-section, .design-section, .more-section { padding-left: 18px; padding-right: 18px; }
+    .design-grid { grid-template-columns: 1fr; }
+    .more-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="赤瑕科技" class="nav-logo-img"><span class="nav-logo-text">赤瑕科技</span></a>
+  <div class="nav-links">
+    <a href="about.html">关于</a><a href="products.html">产品</a><a href="factory.html">工厂</a>
+    <a href="jewelry.html" class="active">珠宝</a><a href="tech.html">技术</a><a href="ai.html">AI 能力</a>
+    <a href="contact.html" class="nav-cta">联系我们</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-eyebrow">Jewelry Products</div>
+    <h1>从原料到<em>珠宝成品</em></h1>
+    <p>赤瑕的培育彩宝已完成从晶体到珠宝成品的全链路打通，产品可直接用于高端珠宝设计与品牌定制。</p>
+  </div>
+</div>
+
+<!-- EARRINGS -->
+<section class="jewelry-section">
+  <div class="jewelry-split">
+    <div class="jewelry-info reveal">
+      <div class="jk">Ruby Earrings · 珠宝成品</div>
+      <h3>红宝石耳饰成品</h3>
+      <div class="jk-en">Pigeon Blood Ruby Earrings</div>
+      <p>完成度最高的珠宝成品之一。培育鸽血红镶嵌于精工金属底座，呈现天然红宝石的色泽与火彩。可直接进入高端珠宝表达，无需二次加工。</p>
+      <p>适合珠宝品牌定制、设计师联名、零售渠道铺货等多种合作模式。</p>
+      <div class="jk-spec">● 完成度最高 · 可直接上架</div>
+    </div>
+    <div class="jewelry-visual">
+      <img src="../assets/hp/products/微信图片_20260211134900_1471_8.jpg" alt="红宝石耳饰">
+    </div>
+  </div>
+</section>
+
+<!-- NECKLACE -->
+<section class="jewelry-section">
+  <div class="jewelry-split reverse">
+    <div class="jewelry-info reveal">
+      <div class="jk">Ruby Necklace · 珠宝成品</div>
+      <h3>红宝石项链成品</h3>
+      <div class="jk-en">Pigeon Blood Ruby Necklace</div>
+      <p>培育鸽血红主石，搭配精工链条，展现红宝石的浓郁色泽与光泽。</p>
+      <p>支持定制不同镶嵌方式、金属材质与链长规格，满足品牌多样化需求。</p>
+      
+    </div>
+    <div class="jewelry-visual">
+      <img src="../assets/hp/products/微信图片_20260211134342_1446_8.jpg" alt="红宝石项链">
+    </div>
+  </div>
+</section>
+
+<!-- CRYSTAL RAW MATERIALS -->
+<section class="crystal-section">
+  <div class="crystal-section-header">
+    <div class="section-eyebrow">Raw Materials</div>
+    <h2 class="section-title">晶体原料展示</h2>
+    <p class="section-lead">从晶体块到切割裸石，赤瑕全链路能力的实物证明。</p>
+  </div>
+  <div class="crystal-grid reveal">
+    <div class="crystal-card">
+      <img src="../assets/large-ruby-crystal-crop.jpg" alt="红宝石晶体块">
+      <div class="cc-body">
+        <div class="cc-kicker">原料</div>
+        <div class="cc-title">红宝石晶体块</div>
+        <div class="cc-desc">主体完整、透光度成立，最适合承接原料能力这条线。</div>
+      </div>
+    </div>
+    <div class="crystal-card">
+      <img src="../assets/cut-stone-library.jpg" alt="切割裸石">
+      <div class="cc-body">
+        <div class="cc-kicker">加工</div>
+        <div class="cc-title">切割裸石</div>
+        <div class="cc-desc">全切型标准裸石，切工标准化，可直接镶嵌或进一步定制。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN GALLERY -->
+<section class="design-section">
+  <div class="design-header">
+    <div class="section-eyebrow">Design Gallery</div>
+    <h2 class="section-title">设计稿件</h2>
+    <p class="section-lead">赤瑕设计团队创作的珠宝设计方案，展现培育彩宝的无限可能。从晶体块到切割裸石，赤瑕全链路能力的实物证明。</p>
+  </div>
+  <div class="design-grid reveal">
+    <div class="design-card"><img src="../assets/hp/design/刘梦文01.png" alt="设计方案01"></div>
+    <div class="design-card"><img src="../assets/hp/design/刘梦文05.png" alt="设计方案05"></div>
+    <div class="design-card"><img src="../assets/hp/design/刘梦文10.png" alt="设计方案10"></div>
+    <div class="design-card"><img src="../assets/hp/design/刘梦文15.png" alt="设计方案15"></div>
+    <div class="design-card"><img src="../assets/hp/design/刘可心01.png" alt="设计方案-刘可心01"></div>
+    <div class="design-card"><img src="../assets/hp/design/刘可心02.png" alt="设计方案-刘可心02"></div>
+  </div>
+</section>
+
+<!-- MORE PRODUCTS -->
+<section class="more-section">
+  <div class="crystal-section-header">
+    <div class="section-eyebrow">More Products</div>
+    <h2 class="section-title">更多成品</h2>
+  </div>
+  <div class="more-grid reveal">
+    <div class="more-card">
+      <div class="more-card-img">
+        <img src="../assets/hp/products/微信图片_20260211134012_1441_8.jpg" alt="鸽血红戒指">
+        <div class="more-card-title">鸽血红戒指</div>
+      </div>
+      <div class="more-card-detail">
+        <div class="more-card-detail-title">鸽血红戒指</div>
+        <div class="more-card-detail-desc">主证鸽血红，强荧光，饱和度高，适合婚戒定制。</div>
+        <div class="more-card-detail-specs">
+          <span class="more-card-detail-spec">鸽血红</span>
+          <span class="more-card-detail-spec">强荧光</span>
+          <span class="more-card-detail-spec">IF-VVS</span>
+        </div>
+      </div>
+    </div>
+    <div class="more-card">
+      <div class="more-card-img">
+        <img src="../assets/hp/products/微信图片_20260211134342_1446_8.jpg" alt="红宝石项链">
+        <div class="more-card-title">红宝石项链</div>
+      </div>
+      <div class="more-card-detail">
+        <div class="more-card-detail-title">红宝石项链</div>
+        <div class="more-card-detail-desc">优雅链镶工艺，多石群镶设计，光彩夺目。</div>
+        <div class="more-card-detail-specs">
+          <span class="more-card-detail-spec">群镶设计</span>
+          <span class="more-card-detail-spec">18K金</span>
+        </div>
+      </div>
+    </div>
+    <div class="more-card">
+      <div class="more-card-img">
+        <img src="../assets/hp/products/微信图片_20260211134912_1473_8.jpg" alt="鸽血红耳饰">
+        <div class="more-card-title">鸽血红耳饰</div>
+      </div>
+      <div class="more-card-detail">
+        <div class="more-card-detail-title">鸽血红耳饰</div>
+        <div class="more-card-detail-desc">精致垂坠设计，轻盈优雅，日常百搭。</div>
+        <div class="more-card-detail-specs">
+          <span class="more-card-detail-spec">垂坠款</span>
+          <span class="more-card-detail-spec">轻盈</span>
+        </div>
+      </div>
+    </div>
+    <div class="more-card">
+      <div class="more-card-img">
+        <img src="../assets/hp/products/微信图片_20260211134724_1452_8.jpg" alt="帕帕拉恰吊坠">
+        <div class="more-card-title">帕帕拉恰吊坠</div>
+      </div>
+      <div class="more-card-detail">
+        <div class="more-card-detail-title">帕帕拉恰吊坠</div>
+        <div class="more-card-detail-desc">粉橙双色，莲花色标，稀有珍藏。</div>
+        <div class="more-card-detail-specs">
+          <span class="more-card-detail-spec">粉橙双色</span>
+          <span class="more-card-detail-spec">莲花色</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand"><img src="../assets/logo.png" alt="赤瑕科技" class="footer-logo"><span class="footer-text">青岛赤瑕科技有限公司</span></div>
+  <div class="footer-copy">© 2024 Chixia Technology. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="about.html">关于</a><a href="products.html">产品</a><a href="factory.html">工厂</a><a href="jewelry.html">珠宝</a><a href="tech.html">技术</a><a href="ai.html">AI</a><a href="contact.html">联系</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>产品中心 | 青岛赤瑕科技有限公司</title>
+<link rel="stylesheet" href="../css/shared.css">
+<style>
+  .page-header {
+    padding: 120px 60px 60px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #0a0e1a, #060914);
+  }
+  .page-header::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 50%, rgba(142,31,49,0.2) 0%, transparent 55%);
+  }
+  .page-header-inner { position: relative; z-index: 1; }
+  .page-header h1 { font-family: "Noto Serif SC", serif; font-size: clamp(32px,5vw,56px); font-weight: 900; line-height: 1.2; letter-spacing: 2px; margin-bottom: 14px; }
+  .page-header h1 em { font-style: normal; color: var(--gold); }
+  .page-header p { font-size: 15px; line-height: 2; color: var(--text-2); max-width: 620px; }
+
+  /* ── PRODUCT SECTIONS ── */
+  .product-section { padding: 80px 60px; }
+  .product-section:nth-child(even) { background: var(--bg-2); }
+  .product-split {
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center;
+    margin-top: 48px;
+  }
+  .product-split.reverse { grid-template-columns: 0.9fr 1.1fr; }
+  .product-split.reverse .product-visual { order: 2; }
+  .product-split.reverse .product-info  { order: 1; }
+
+  .product-visual {
+    border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
+    box-shadow: var(--shadow); background: #0a0e1a;
+  }
+  .product-visual img {
+    width: 100%; height: auto; max-height: 480px;
+    object-fit: contain; object-position: center;
+    display: block;
+  }
+
+  .product-info { }
+  .product-kicker { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .product-name  { font-family: "Noto Serif SC", serif; font-size: 30px; font-weight: 700; margin-bottom: 8px; color: var(--gold-soft); }
+  .product-name-en { font-size: 13px; color: var(--text-3); margin-bottom: 20px; letter-spacing: 1px; }
+  .product-desc { font-size: 14px; line-height: 1.9; color: var(--text-2); margin-bottom: 28px; }
+
+  .spec-table { width: 100%; border-collapse: collapse; }
+  .spec-table tr { border-bottom: 1px solid var(--line); }
+  .spec-table td { padding: 12px 0; font-size: 13px; }
+  .spec-table td:first-child { color: var(--gold); letter-spacing: 1.5px; width: 100px; }
+  .spec-table td:last-child { color: var(--text); }
+  .product-badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 22px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(213,174,96,0.05); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); }
+
+  /* ── GRADING SECTION ── */
+    position: absolute; bottom: 28px; font-size: 12px;
+    color: rgba(154,163,181,0.6); letter-spacing: 1px;
+  }
+
+  /* ── FAMILY SECTION ── */
+  .family-section { padding: 80px 60px; }
+  .family-header { margin-bottom: 48px; text-align: center; }
+  .family-content {
+    max-width: 680px; margin: 0 auto;
+    text-align: center;
+    position: relative; padding: 56px 48px 48px;
+    background: var(--bg-3);
+    border: 1px solid rgba(213,174,96,0.12);
+    border-radius: 16px;
+  }
+  .family-deco {
+    position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    border-radius: 2px;
+  }
+  .family-sub-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: 26px; font-weight: 700;
+    color: var(--gold-soft); margin-bottom: 18px;
+    letter-spacing: 2px;
+  }
+  .family-desc {
+    font-size: 14px; line-height: 2;
+    color: var(--text-2); margin-bottom: 28px;
+  }
+  .family-tags {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  }
+  .family-tags span {
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(213,174,96,0.08);
+    border: 1px solid rgba(213,174,96,0.25);
+    font-size: 12px; color: var(--gold);
+    letter-spacing: 1px; transition: background 0.3s;
+  }
+  .family-tags span:hover { background: rgba(213,174,96,0.16); }
+
+  /* ── NAV ACTIVE ── */
+  .nav-links a[href="products.html"] { color: var(--gold) !important; }
+
+  @media (max-width: 1100px) {
+    .product-split, .product-split.reverse { grid-template-columns: 1fr; gap: 32px; }
+    .product-split.reverse .product-visual, .product-split.reverse .product-info { order: unset; }
+    .family-content { padding: 40px 28px 36px; }
+  }
+  @media (max-width: 768px) {
+    .page-header { padding: 100px 18px 48px; }
+      max-height: 560px;
+      padding: 14px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="赤瑕科技" class="nav-logo-img"><span class="nav-logo-text">赤瑕科技</span></a>
+  <div class="nav-links">
+    <a href="about.html">关于</a>
+    <a href="products.html" class="active">产品</a>
+    <a href="factory.html">工厂</a>
+    <a href="jewelry.html">珠宝</a>
+    <a href="tech.html">技术</a>
+    <a href="ai.html">AI 能力</a>
+    <a href="contact.html" class="nav-cta">联系我们</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-eyebrow">Color Platform</div>
+    <h1>全色系<em>培育彩宝</em></h1>
+    <p>从鸽血红出发，覆盖帕帕拉恰、蓝宝石、紫色系与绿色 YAG，持续拓展色彩边界。</p>
+  </div>
+</div>
+
+<!-- RUBY -->
+<section class="product-section" id="ruby">
+  <div class="product-split">
+    <div class="product-info reveal">
+      <div class="product-kicker">Pigeon Blood Ruby · 主打产品</div>
+      <div class="product-name">鸽血红 · Ruby</div>
+      <div class="product-name-en">Cr : Al₂O₃  Chromium-doped Corundum</div>
+      <div class="product-desc">稳定量产，持续补货。温梯法鸽血红，颜色纯正、晶体完整、质量稳定。鸽血红色值长期一致，无批次差异。</div>
+      <table class="spec-table">
+        <tr><td>颜色</td><td>鸽血红，Cr 含量精准控制</td></tr>
+        <tr><td>工艺</td><td>温梯法（Czochralski 温梯变种）</td></tr>
+        <tr><td>尺寸</td><td>毫米级 ~ 克拉级全覆盖</td></tr>
+        <tr><td>年产能</td><td>5 吨，持续扩产</td></tr>
+        <tr><td>市场地位</td><td>国内领先 · 小尺寸国内唯一</td></tr>
+      </table>
+      <div class="product-badge">● 国内领先</div>
+    </div>
+    <div class="product-visual">
+      <img src="../assets/hp/products/微信图片_20260211134012_1441_8.jpg" alt="鸽血红">
+    </div>
+  </div>
+</section>
+
+<!-- PADPARADSCHA -->
+<section class="product-section" id="padparadscha">
+  <div class="product-split reverse">
+    <div class="product-info reveal">
+      <div class="product-kicker">Padparadscha Sapphire · 重点储备</div>
+      <div class="product-name">帕帕拉恰 · 粉橙蓝宝石</div>
+      <div class="product-name-en">Cr+Ni co-doped Al₂O₃ · Sunrise Ruby</div>
+      <div class="product-desc">重点色储备已成，产品化持续推进。精准控制粉色与橙色的比例与饱和度，呈现帕帕拉恰独特的日落色调。工艺参数持续迭代中，已完成小批量试产。</div>
+      <table class="spec-table">
+        <tr><td>颜色</td><td>粉橙双色，比例可调</td></tr>
+        <tr><td>工艺</td><td>温梯法，Ni + Cr 共同掺杂</td></tr>
+        <tr><td>尺寸</td><td>3mm ~ 12mm 可定制</td></tr>
+        <tr><td>进度</td><td>储备完成 · 试产阶段</td></tr>
+        <tr><td>年产能</td><td>待扩产 · 批量供货筹备中</td></tr>
+      </table>
+      <div class="product-badge">● 储备阶段</div>
+    </div>
+    <div class="product-visual">
+      <img src="../assets/hp/products/微信图片_20260211134738_1454_8.jpg" alt="帕帕拉恰">
+    </div>
+  </div>
+</section>
+
+
+</div>
+
+<!-- GEMSTONE FAMILY -->
+<section class="family-section">
+  <div class="family-header">
+    <div class="section-eyebrow">Gemstone Family</div>
+    <h2 class="section-title">宝石家族</h2>
+    <p class="section-lead">赤瑕培育彩宝产品矩阵，覆盖多种宝石品类。</p>
+  </div>
+  <div class="family-content reveal">
+    <div class="family-deco"></div>
+    <h3 class="family-sub-title">全品类布局</h3>
+    <p class="family-desc">红宝石、祖母绿、尖晶石、芬达石、猫眼石、帕拉伊巴…赤瑕持续拓展培育彩宝品类，满足市场多元需求。</p>
+    <div class="family-tags">
+      <span>红宝石</span><span>祖母绿</span><span>尖晶石</span><span>芬达石</span><span>猫眼石</span><span>帕拉伊巴</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand"><img src="../assets/logo.png" alt="赤瑕科技" class="footer-logo"><span class="footer-text">青岛赤瑕科技有限公司</span></div>
+  <div class="footer-copy">© 2024 Chixia Technology. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="about.html">关于</a><a href="products.html">产品</a><a href="factory.html">工厂</a><a href="jewelry.html">珠宝</a><a href="tech.html">技术</a><a href="ai.html">AI</a><a href="contact.html">联系</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+</script>
+</body>
+</html>
