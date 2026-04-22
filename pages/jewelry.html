@@ -94,6 +94,13 @@
     display: block;
     transition: transform 0.6s;
   }
+  .more-card-img.img-fill {
+    height: 260px;
+  }
+  .more-card-img.img-fill img {
+    height: 100%;
+    object-fit: cover;
+  }
   .more-card:hover .more-card-img img {
     transform: scale(1.05);
   }
@@ -287,7 +294,7 @@
       </div>
     </div>
     <div class="more-card">
-      <div class="more-card-img">
+      <div class="more-card-img img-fill">
         <img src="../assets/xl1.jpg" alt="红宝石项链">
         <div class="more-card-title">红宝石项链</div>
       </div>
