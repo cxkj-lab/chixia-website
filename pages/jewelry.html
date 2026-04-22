@@ -94,10 +94,10 @@
     display: block;
     transition: transform 0.6s;
   }
-  .more-card-img.img-fill {
-    height: 260px;
-  }
-  .more-card-img.img-fill img {
+  #necklace-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
     height: 100%;
     object-fit: cover;
   }
@@ -293,11 +293,9 @@
         </div>
       </div>
     </div>
-    <div class="more-card">
-      <div class="more-card-img img-fill">
-        <img src="../assets/xl1.jpg" alt="红宝石项链">
-        <div class="more-card-title">红宝石项链</div>
-      </div>
+    <div class="more-card" id="necklace-card">
+      <img src="../assets/xl1.jpg" alt="红宝石项链">
+      <div class="more-card-title">红宝石项链</div>
       <div class="more-card-detail">
         <div class="more-card-detail-title">红宝石项链</div>
         <div class="more-card-detail-desc">优雅链镶工艺，多石群镶设计，光彩夺目。</div>
