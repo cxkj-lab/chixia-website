@@ -23,21 +23,28 @@
   .product-section { padding: 80px 60px; }
   .product-section:nth-child(even) { background: var(--bg-2); }
   .product-split {
-    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
     margin-top: 48px;
   }
-  .product-split.reverse { grid-template-columns: 0.9fr 1.1fr; }
+  .product-split.reverse { grid-template-columns: 1fr 1fr; }
   .product-split.reverse .product-visual { order: 2; }
   .product-split.reverse .product-info  { order: 1; }
 
   .product-visual {
     border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
     box-shadow: var(--shadow); background: #0a0e1a;
+    width: 100%; height: 520px;
   }
   .product-visual img {
-    width: 100%; height: auto; max-height: 480px;
-    object-fit: contain; object-position: center;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 70%;
     display: block;
+  }
+  #ruby .product-visual img {
+    object-position: 75% 75%;
+  }
+  #padparadscha .product-visual img {
+    object-position: 55% 70%;
   }
 
   .product-info { }
