@@ -64,31 +64,6 @@
   .crystal-card .cc-desc { font-size: 12px; color: var(--text-2); }
 
   /* ── DESIGN GALLERY ── */
-  .design-section { padding: 60px 60px; background: var(--bg-2); }
-  .design-header { margin-bottom: 48px; text-align: left; }
-  .design-header .section-title { text-align: left; }
-  .design-header .section-lead { text-align: left; margin: 0; }
-  .design-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .design-card {
-    border-radius: 12px; overflow: hidden;
-    border: 1px solid var(--line);
-    background: #0b1020;
-    aspect-ratio: 1/1;
-  }
-  .design-card img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-    display: block;
-  }
-  .design-card:hover img {
-    transform: scale(1.05);
-  }
-
   /* ── MORE PRODUCTS ── */
   .more-section { padding: 60px 60px; }
   .more-grid {
@@ -194,17 +169,16 @@
   .nav-links a[href="jewelry.html"] { color: var(--gold) !important; }
 
   @media (max-width: 1100px) {
-    .page-header, .jewelry-section, .crystal-section, .design-section, .more-section { padding-left: 30px; padding-right: 30px; }
+    .page-header, .jewelry-section, .crystal-section, .more-section { padding-left: 30px; padding-right: 30px; }
     .jewelry-split, .jewelry-split.reverse { grid-template-columns: 1fr; gap: 32px; }
     .jewelry-split.reverse .jewelry-visual, .jewelry-split.reverse .jewelry-info { order: unset; }
     .crystal-grid { grid-template-columns: 1fr; }
-    .design-grid { grid-template-columns: repeat(2, 1fr); }
+
     .more-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 768px) {
     .page-header { padding: 100px 18px 48px; }
-    .jewelry-section, .crystal-section, .design-section, .more-section { padding-left: 18px; padding-right: 18px; }
-    .design-grid { grid-template-columns: 1fr; }
+    .jewelry-section, .crystal-section, .more-section { padding-left: 18px; padding-right: 18px; }
     .more-grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -287,23 +261,6 @@
         <div class="cc-desc">全切型标准裸石，切工标准化，可直接镶嵌或进一步定制。</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- DESIGN GALLERY -->
-<section class="design-section">
-  <div class="design-header">
-    <div class="section-eyebrow">Design Gallery</div>
-    <h2 class="section-title">设计稿件</h2>
-    <p class="section-lead">赤瑕设计团队创作的珠宝设计方案，展现培育彩宝的无限可能。从晶体块到切割裸石，赤瑕全链路能力的实物证明。</p>
-  </div>
-  <div class="design-grid reveal">
-    <div class="design-card"><img src="../assets/hp/design/刘梦文01.jpg" alt="设计方案01"></div>
-    <div class="design-card"><img src="../assets/hp/design/刘梦文05.jpg" alt="设计方案05"></div>
-    <div class="design-card"><img src="../assets/hp/design/刘梦文10.jpg" alt="设计方案10"></div>
-    <div class="design-card"><img src="../assets/hp/design/刘梦文15.jpg" alt="设计方案15"></div>
-    <div class="design-card"><img src="../assets/hp/design/刘可心01.jpg" alt="设计方案-刘可心01"></div>
-    <div class="design-card"><img src="../assets/hp/design/刘可心02.jpg" alt="设计方案-刘可心02"></div>
   </div>
 </section>
 
