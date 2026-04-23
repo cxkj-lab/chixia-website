@@ -88,34 +88,6 @@
   .ai-stream-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); padding-top: 2px; }
   .ai-stream-text  { font-size: 12px; line-height: 1.8; color: var(--text-2); }
 
-  /* ── FUTURE ── */
-  .future-section { padding: 80px 60px; background: var(--bg-2); }
-  .future-header { margin-bottom: 48px; }
-  .future-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 0; }
-  .future-copy {
-    border-radius: var(--radius); border: 1px solid rgba(158,196,255,0.12);
-    background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(112,150,214,0.04));
-    padding: 36px 28px; position: relative; overflow: hidden;
-  }
-  .future-copy::after { content: ""; position: absolute; right: -50px; top: -60px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(120,170,255,0.26), transparent 72%); }
-  .future-kicker { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  .future-title  { font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--gold-soft); margin-bottom: 12px; }
-  .future-copy p { font-size: 13px; line-height: 1.9; color: var(--text-2); margin-bottom: 14px; }
-  .future-mode { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 8px 16px; border-radius: 999px; border: 1px solid rgba(100,148,210,0.22); background: linear-gradient(90deg, rgba(94,138,208,0.16), rgba(30,47,86,0.20)); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(222,233,248,0.96); }
-  .future-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
-  .future-fact { padding: 16px 14px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.06); background: rgba(5,8,16,0.26); }
-  .future-fact strong { display: block; font-size: 28px; font-weight: 700; color: var(--gold-soft); }
-  .future-fact span { display: block; margin-top: 5px; font-size: 11px; color: var(--text-2); line-height: 1.7; }
-  .future-visual {
-    border-radius: var(--radius); border: 1px solid rgba(158,196,255,0.12);
-    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(112,150,214,0.04));
-    display: flex; flex-direction: column; justify-content: center; padding: 36px; gap: 12px;
-  }
-  .ai-viz-node { padding: 14px 18px; border-radius: 999px; border: 1px solid rgba(134,184,255,0.18); background: rgba(255,255,255,0.05); font-size: 12px; letter-spacing: 1.5px; color: rgba(214,228,248,0.94); text-align: center; }
-  .ai-viz-center { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; border-radius: 50%; aspect-ratio: 1; border: 1px solid rgba(213,174,96,0.20); background: radial-gradient(circle at 50% 36%, rgba(124,169,238,0.26), rgba(9,13,24,0.95) 72%); box-shadow: 0 0 40px rgba(65,107,175,0.28); }
-  .ai-viz-center-kicker { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-  .ai-viz-center-title { font-size: 20px; font-weight: 700; color: var(--gold-soft); }
-
   /* ── CONTROL CABINET PHOTO ── */
   .cabinet-section { padding: 80px 60px; }
   .cabinet-photo { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); margin-top: 48px; }
@@ -133,14 +105,13 @@
   .section-lead { margin: 0; }
 
   @media (max-width: 1100px) {
-    .page-header, .ai-section, .future-section, .cabinet-section { padding-left: 30px; padding-right: 30px; }
+    .page-header, .ai-section, .cabinet-section { padding-left: 30px; padding-right: 30px; }
     .ai-hero-row { grid-template-columns: 1fr; }
-    .future-grid { grid-template-columns: 1fr; }
     .ai-cards { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 768px) {
     .page-header { padding: 100px 18px 48px; }
-    .ai-section, .future-section, .cabinet-section { padding-left: 18px; padding-right: 18px; }
+    .ai-section, .cabinet-section { padding-left: 18px; padding-right: 18px; }
     .ai-cards { grid-template-columns: 1fr; }
     .ai-side-grid { grid-template-columns: 1fr 1fr; }
   }
@@ -264,32 +235,6 @@
       <div class="cc-kicker">智能控制</div>
       <div class="cc-title">设备与控制柜</div>
       <div class="cc-desc">最能说明设备本体和控制端放在同一画面，适合讲智能控制、流程接管和设备稳定性。</div>
-    </div>
-  </div>
-</section>
-
-<!-- FUTURE -->
-<section class="future-section">
-  <div class="future-header">
-    <div class="section-eyebrow">Future Vision</div>
-    <h2 class="section-title">材料 × AI · 无限延展</h2>
-    <p class="section-lead">从彩宝出发，以晶体生长能力与 AI 数据闭环为双核，向更多彩色材料延展，构建全球化材料平台。</p>
-  </div>
-  <div class="future-grid reveal">
-    <div class="future-copy">
-      <div class="future-kicker">Dual Core · Global Platform</div>
-      <div class="future-title">材料平台<br>无限延展</div>
-      <p>从彩宝出发，以晶体生长能力与 AI 数据闭环为双核，向更多彩色材料延展。</p>
-      <p>发明专利持续申报中。</p>
-      <div class="future-mode">◆ 晶体生长 × AI 数据闭环</div>
-    </div>
-    <div class="future-visual">
-      <div class="ai-viz-node">晶体生长建模</div>
-      <div class="ai-viz-center">
-        <div class="ai-viz-center-kicker">Chixia AI</div>
-        <div class="ai-viz-center-title">材料平台</div>
-      </div>
-      <div class="ai-viz-node">全链路数据闭环</div>
     </div>
   </div>
 </section>
