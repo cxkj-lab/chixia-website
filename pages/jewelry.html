@@ -6,6 +6,13 @@
 <title>珠宝成品 | 青岛赤瑕科技有限公司</title>
 <link rel="stylesheet" href="../css/shared.css">
 <style>
+  /* ── REVEAL DELAYS ── */
+  .reveal-d1 { transition-delay: 0.10s; }
+  .reveal-d2 { transition-delay: 0.24s; }
+  .reveal-d3 { transition-delay: 0.38s; }
+  .reveal-d4 { transition-delay: 0.52s; }
+  .reveal-d5 { transition-delay: 0.66s; }
+
   .page-header { padding: 120px 60px 60px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0e1a, #060914); }
   .page-header::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(142,31,49,0.2) 0%, transparent 55%); }
   .page-header-inner { position: relative; z-index: 1; }
@@ -24,17 +31,12 @@
   .jewelry-visual {
     border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
     box-shadow: var(--shadow); background: #0a0e1a;
-  }
-  .jewelry-visual {
-    border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
-    box-shadow: var(--shadow); background: #0a0e1a;
     width: 100%; height: 480px;
   }
   .jewelry-visual img {
     width: 100%; height: 100%;
     object-fit: cover; object-position: center; display: block;
   }
-  /* 项链：吊坠在画面偏下偏右，调整到正中心 */
   #necklace-visual img {
     object-fit: cover;
     object-position: 28% 38%;
@@ -63,7 +65,6 @@
   .crystal-card .cc-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
   .crystal-card .cc-desc { font-size: 12px; color: var(--text-2); }
 
-  /* ── DESIGN GALLERY ── */
   /* ── MORE PRODUCTS ── */
   .more-section { padding: 60px 60px; }
   .more-grid {
@@ -94,13 +95,7 @@
     display: block;
     transition: transform 0.6s;
   }
-  #earring-card img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  #earring-card img,
   #necklace-card img {
     position: absolute;
     inset: 0;
@@ -187,7 +182,6 @@
     .jewelry-split, .jewelry-split.reverse { grid-template-columns: 1fr; gap: 32px; }
     .jewelry-split.reverse .jewelry-visual, .jewelry-split.reverse .jewelry-info { order: unset; }
     .crystal-grid { grid-template-columns: 1fr; }
-
     .more-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 768px) {
@@ -210,7 +204,7 @@
 
 <!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="page-header-inner">
+  <div class="page-header-inner reveal">
     <div class="section-eyebrow">Jewelry Products</div>
     <h1>从原料到<em>珠宝成品</em></h1>
     <p>赤瑕的培育彩宝已完成从晶体到珠宝成品的全链路打通，产品可直接用于高端珠宝设计与品牌定制。</p>
@@ -228,7 +222,7 @@
       <p>适合珠宝品牌定制、设计师联名、零售渠道铺货等多种合作模式。</p>
       <div class="jk-spec">● 完成度最高 · 可直接上架</div>
     </div>
-    <div class="jewelry-visual">
+    <div class="jewelry-visual reveal reveal-d1">
       <img src="../assets/hp/products/微信图片_20260211134900_1471_8.jpg" alt="红宝石耳饰">
     </div>
   </div>
@@ -243,9 +237,8 @@
       <div class="jk-en">Pigeon Blood Ruby Necklace</div>
       <p>培育鸽血红主石，搭配精工链条，展现红宝石的浓郁色泽与光泽。</p>
       <p>支持定制不同镶嵌方式、金属材质与链长规格，满足品牌多样化需求。</p>
-      
     </div>
-    <div class="jewelry-visual" id="necklace-visual">
+    <div class="jewelry-visual reveal reveal-d1" id="necklace-visual">
       <img src="../assets/hp/products/微信图片_20260211134342_1446_8.jpg" alt="红宝石项链">
     </div>
   </div>
@@ -253,13 +246,13 @@
 
 <!-- CRYSTAL RAW MATERIALS -->
 <section class="crystal-section">
-  <div class="crystal-section-header">
+  <div class="crystal-section-header reveal reveal-d1">
     <div class="section-eyebrow">Raw Materials</div>
     <h2 class="section-title">晶体原料展示</h2>
     <p class="section-lead">从晶体块到切割裸石，赤瑕全链路能力的实物证明。</p>
   </div>
-  <div class="crystal-grid reveal">
-    <div class="crystal-card">
+  <div class="crystal-grid">
+    <div class="crystal-card reveal">
       <img src="../assets/large-ruby-crystal-crop.jpg" alt="红宝石晶体块">
       <div class="cc-body">
         <div class="cc-kicker">原料</div>
@@ -267,7 +260,7 @@
         <div class="cc-desc">主体完整、透光度成立，最适合承接原料能力这条线。</div>
       </div>
     </div>
-    <div class="crystal-card">
+    <div class="crystal-card reveal reveal-d1">
       <img src="../assets/cut-stone-library.jpg" alt="切割裸石">
       <div class="cc-body">
         <div class="cc-kicker">加工</div>
@@ -280,12 +273,12 @@
 
 <!-- MORE PRODUCTS -->
 <section class="more-section">
-  <div class="crystal-section-header">
+  <div class="crystal-section-header reveal reveal-d1">
     <div class="section-eyebrow">More Products</div>
     <h2 class="section-title">更多成品</h2>
   </div>
-  <div class="more-grid reveal">
-    <div class="more-card">
+  <div class="more-grid">
+    <div class="more-card reveal">
       <div class="more-card-img">
         <img src="../assets/ring2.jpg" alt="鸽血红戒指">
         <div class="more-card-title">鸽血红戒指</div>
@@ -300,7 +293,7 @@
         </div>
       </div>
     </div>
-    <div class="more-card" id="necklace-card">
+    <div class="more-card reveal reveal-d1" id="necklace-card">
       <img src="../assets/xl1.jpg" alt="红宝石项链">
       <div class="more-card-title">红宝石项链</div>
       <div class="more-card-detail">
@@ -312,7 +305,7 @@
         </div>
       </div>
     </div>
-    <div class="more-card" id="earring-card">
+    <div class="more-card reveal reveal-d2" id="earring-card">
       <img src="../assets/es1.jpg" alt="鸽血红耳饰">
       <div class="more-card-title">鸽血红耳饰</div>
       <div class="more-card-detail">
@@ -324,7 +317,7 @@
         </div>
       </div>
     </div>
-    <div class="more-card">
+    <div class="more-card reveal reveal-d3">
       <div class="more-card-img">
         <img src="../assets/hp/products/微信图片_20260211134724_1452_8.jpg" alt="帕帕拉恰吊坠">
         <div class="more-card-title">帕帕拉恰吊坠</div>

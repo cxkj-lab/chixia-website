@@ -6,6 +6,13 @@
 <title>工厂一览 | 青岛赤瑕科技有限公司</title>
 <link rel="stylesheet" href="../css/shared.css">
 <style>
+  /* ── REVEAL DELAYS ── */
+  .reveal-d1 { transition-delay: 0.10s; }
+  .reveal-d2 { transition-delay: 0.24s; }
+  .reveal-d3 { transition-delay: 0.38s; }
+  .reveal-d4 { transition-delay: 0.52s; }
+  .reveal-d5 { transition-delay: 0.66s; }
+
   .page-header {
     padding: 120px 60px 60px; position: relative; overflow: hidden;
     background: linear-gradient(135deg, #0a0e1a, #060914);
@@ -21,7 +28,6 @@
   .gallery-header { margin-bottom: 48px; }
   .gallery-header .section-lead { margin: 0; }
 
-  /* Full-width photo: no crop, max-height constraint, contain */
   .photo-full {
     border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
     background: #0a0e1a; box-shadow: var(--shadow); margin-bottom: 24px;
@@ -35,7 +41,6 @@
   .photo-full .photo-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
   .photo-full .photo-desc { font-size: 12px; color: var(--text-2); }
 
-  /* Grid layout: 2 col, photos no crop */
   .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
   .photo-grid-item {
     border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
@@ -89,7 +94,7 @@
 
 <!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="page-header-inner">
+  <div class="page-header-inner reveal">
     <div class="section-eyebrow">Factory Tour</div>
     <h1>走进<em>赤瑕工厂</em></h1>
     <p>2 条单晶线、1 条加工线、40 台长晶炉、1500㎡ 厂房规模，真实记录赤瑕的生产能力与专业度。</p>
@@ -98,67 +103,61 @@
 
 <!-- GALLERY -->
 <section class="gallery">
-  <div class="gallery-header">
+  <div class="gallery-header reveal reveal-d1">
     <div class="section-eyebrow">Production Photos</div>
     <h2 class="section-title">工厂实景</h2>
-    
   </div>
 
-  <!-- 2-col grid: no crop -->
   <div class="photo-grid">
     <div class="photo-grid-item reveal">
       <img src="../assets/photo-selects/round-02/optimized/plant-furnace-aisle-center.jpg" alt="长晶炉主通道">
       <div class="photo-body">
         <div class="photo-kicker">中轴视图</div>
         <div class="photo-title">长晶炉主通道</div>
-        
       </div>
     </div>
-    <div class="photo-grid-item reveal">
+    <div class="photo-grid-item reveal reveal-d1">
       <img src="../assets/photo-selects/round-02/optimized/plant-furnace-row.jpg" alt="长晶炉阵列">
       <div class="photo-body">
         <div class="photo-kicker">阵列视图</div>
         <div class="photo-title">长晶炉阵列侧景</div>
-        
       </div>
     </div>
   </div>
 
-  <!-- 1-col: control cabinet -->
-  <div class="photo-full reveal">
+  <div class="photo-full reveal reveal-d1">
     <img src="../assets/photo-selects/round-02/optimized/plant-control-cabinet.jpg" alt="设备与控制柜">
     <div class="photo-body">
       <div class="photo-kicker">智能控制</div>
       <div class="photo-title">设备与控制柜</div>
-      
     </div>
   </div>
 </section>
 
 <!-- FACTORY STATS -->
 <section class="factory-stats">
-  <div class="section-eyebrow">Scale & Capacity</div>
-  <h2 class="section-title">工厂规模一览</h2>
-  <div class="factory-stats-grid reveal">
-    <div class="factory-stat-card">
+  <div class="section-eyebrow reveal reveal-d1">Scale & Capacity</div>
+  <h2 class="section-title reveal reveal-d2">工厂规模一览</h2>
+  <div class="factory-stats-grid">
+    <div class="factory-stat-card reveal">
       <div class="fs-icon">🏭</div>
       <div class="fs-num">2+1</div>
       <div class="fs-label">生产线</div>
       <div class="fs-desc">2条单晶线 + 1条加工线</div>
     </div>
-    <div class="factory-stat-card">
+    <div class="factory-stat-card reveal reveal-d1">
       <div class="fs-icon">🔥</div>
       <div class="fs-num">40台</div>
       <div class="fs-label">长晶炉</div>
       <div class="fs-desc">全部数据联通，AI 持续感知</div>
     </div>
-    <div class="factory-stat-card">
+    <div class="factory-stat-card reveal reveal-d2">
       <div class="fs-icon">📐</div>
       <div class="fs-num">1500㎡</div>
       <div class="fs-label">厂房面积</div>
       <div class="fs-desc">青岛城阳 · 自主研发基地</div>
     </div>
-    <div class="factory-stat-card">
+    <div class="factory-stat-card reveal reveal-d3">
       <div class="fs-icon">💎</div>
       <div class="fs-num">5T/年</div>
       <div class="fs-label">年产能</div>

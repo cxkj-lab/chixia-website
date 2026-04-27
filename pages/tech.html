@@ -6,6 +6,13 @@
 <title>技术优势 | 青岛赤瑕科技有限公司</title>
 <link rel="stylesheet" href="../css/shared.css">
 <style>
+  /* ── REVEAL DELAYS ── */
+  .reveal-d1 { transition-delay: 0.10s; }
+  .reveal-d2 { transition-delay: 0.24s; }
+  .reveal-d3 { transition-delay: 0.38s; }
+  .reveal-d4 { transition-delay: 0.52s; }
+  .reveal-d5 { transition-delay: 0.66s; }
+
   .page-header { padding: 120px 60px 60px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0e1a, #060914); }
   .page-header::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(142,31,49,0.2) 0%, transparent 55%); }
   .page-header-inner { position: relative; z-index: 1; }
@@ -76,17 +83,12 @@
   /* ── NAV ACTIVE ── */
   .nav-links a[href="tech.html"] { color: var(--gold) !important; }
 
-  /* Section headers: left-align titles and body text */
-  .adv-section-header,
-  .specs-header,
-  .brand-section > .section-eyebrow,
-  .brand-section > .section-title {
+  .adv-section-header, .specs-header,
+  .brand-section > .section-eyebrow, .brand-section > .section-title {
     text-align: left;
   }
-  .adv-section-header .section-lead,
-  .specs-header .section-lead,
-  .brand-section .section-lead,
-  .radar-section .section-lead {
+  .adv-section-header .section-lead, .specs-header .section-lead,
+  .brand-section .section-lead, .radar-section .section-lead {
     margin: 0;
   }
 
@@ -116,7 +118,7 @@
 
 <!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="page-header-inner">
+  <div class="page-header-inner reveal">
     <div class="section-eyebrow">Technical Advantages</div>
     <h1>颜色 · 尺寸 · <em>供给</em></h1>
     <p>温梯法工艺六维均衡，颜色、尺寸与供给同时成立，区别于焰熔法与提拉法。</p>
@@ -125,26 +127,23 @@
 
 <!-- RADAR CHART -->
 <section class="radar-section">
-  <div class="section-eyebrow">Process Comparison</div>
-  <h2 class="section-title">工艺方法对比</h2>
-  <p class="section-lead">六维雷达图直观展示赤瑕温梯法在色彩纯度、晶体完整、尺寸上限、成本控制、量产规模与工艺稳定性上的综合优势。</p>
+  <div class="section-eyebrow reveal">Process Comparison</div>
+  <h2 class="section-title reveal reveal-d1">工艺方法对比</h2>
+  <p class="section-lead reveal reveal-d2">六维雷达图直观展示赤瑕温梯法在色彩纯度、晶体完整、尺寸上限、成本控制、量产规模与工艺稳定性上的综合优势。</p>
   <div class="radar-layout">
     <div class="radar-wrap reveal">
       <h3>培育彩宝工艺六维雷达图</h3>
       <svg width="340" height="300" viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg">
-        <!-- Grid -->
         <g fill="none" stroke="rgba(134,184,255,0.08)" stroke-width="1">
           <polygon points="170,30 272,96 272,204 170,270 68,204 68,96" />
           <polygon points="170,58 244,112 244,188 170,242 96,188 96,112" />
           <polygon points="170,86 216,128 216,172 170,214 124,172 124,128" />
         </g>
-        <!-- Axes -->
         <g stroke="rgba(134,184,255,0.15)" stroke-width="1">
           <line x1="170" y1="150" x2="170" y2="30"/><line x1="170" y1="150" x2="272" y2="96"/>
           <line x1="170" y1="150" x2="272" y2="204"/><line x1="170" y1="150" x2="170" y2="270"/>
           <line x1="170" y1="150" x2="68" y2="204"/><line x1="170" y1="150" x2="68" y2="96"/>
         </g>
-        <!-- Labels -->
         <g font-size="11" fill="rgba(245,241,232,0.55)" font-family="PingFang SC,sans-serif" text-anchor="middle">
           <text x="170" y="22">色彩纯度</text>
           <text x="284" y="94">晶体完整</text>
@@ -153,16 +152,12 @@
           <text x="56" y="212">量产规模</text>
           <text x="56" y="94">工艺稳定</text>
         </g>
-        <!-- 焰熔法 (silver) -->
         <polygon points="170,116 238,136 238,172 170,216 102,172 102,136"
           fill="rgba(178,178,178,0.12)" stroke="rgba(178,178,178,0.65)" stroke-width="1.5"/>
-        <!-- 提拉法 (blue) -->
         <polygon points="170,94 248,122 248,170 170,222 92,170 92,122"
           fill="rgba(100,148,210,0.10)" stroke="rgba(100,148,210,0.65)" stroke-width="1.5"/>
-        <!-- 赤瑕温梯法 (gold) -->
         <polygon points="170,52 268,104 268,190 170,250 72,190 72,104"
           fill="rgba(213,174,96,0.18)" stroke="rgba(213,174,96,0.88)" stroke-width="2"/>
-        <!-- Legend dots at bottom -->
       </svg>
       <div class="radar-legend">
         <div class="radar-legend-item"><div class="radar-dot dot-gold"></div>赤瑕温梯法</div>
@@ -170,7 +165,7 @@
         <div class="radar-legend-item"><div class="radar-dot dot-blue"></div>提拉法</div>
       </div>
     </div>
-    <div class="reveal">
+    <div class="reveal reveal-d1">
       <h3 style="font-size:20px;font-weight:700;color:var(--gold-soft);margin-bottom:16px;">为什么是温梯法？</h3>
       <div style="display:grid;gap:14px;">
         <div style="padding:16px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,0.015);">
@@ -192,25 +187,25 @@
 
 <!-- ADVANTAGES -->
 <section class="adv-section">
-  <div class="adv-section-header">
+  <div class="adv-section-header reveal reveal-d1">
     <div class="section-eyebrow">Core Advantages</div>
     <h2 class="section-title">四大核心优势</h2>
     <p class="section-lead">赤瑕在颜色控制、尺寸范围、规模化供给与全链路整合上的综合领先。</p>
   </div>
-  <div class="adv-grid reveal">
-    <div class="adv-card">
+  <div class="adv-grid">
+    <div class="adv-card reveal">
       <div class="adv-head"><div class="adv-icon">◆</div><h4>颜色控制</h4></div>
       <p>温梯法精准控制晶体生长环境，色彩饱和度与色调稳定一致。鸽血红色值长期稳定，无批次差异，满足高端珠宝品牌对颜色一致性的严格要求。</p>
     </div>
-    <div class="adv-card">
+    <div class="adv-card reveal reveal-d1">
       <div class="adv-head"><div class="adv-icon">◇</div><h4>尺寸范围</h4></div>
       <p>从毫米级到克拉级全覆盖。大尺寸用于雕刻与高端定制，小尺寸用于标准珠宝成品，能力完整。突破大体积鸽血红培育瓶颈是赤瑕的核心壁垒。</p>
     </div>
-    <div class="adv-card">
+    <div class="adv-card reveal reveal-d2">
       <div class="adv-head"><div class="adv-icon">▲</div><h4>规模化供给</h4></div>
       <p>40 台长晶炉稳定运行，年产能 5 吨，支持批量供货与持续补货。已触达全球头部红宝石激光棒代理商，国际市场同步推进。</p>
     </div>
-    <div class="adv-card">
+    <div class="adv-card reveal reveal-d3">
       <div class="adv-head"><div class="adv-icon">★</div><h4>全链路整合</h4></div>
       <p>从长晶、加工到分级、定制，一条链路闭环。无需外发加工，品质全程可控。自主加工线完成切割、打磨与抛光，标准化切工流程。</p>
     </div>
@@ -219,33 +214,33 @@
 
 <!-- SPECS -->
 <section class="specs-section">
-  <div class="specs-header">
+  <div class="specs-header reveal reveal-d1">
     <div class="section-eyebrow">Company Data</div>
     <h2 class="section-title">核心数据</h2>
     <p class="section-lead">从创立规模到产能数据，全面了解赤瑕科技的硬实力。</p>
   </div>
-  <div class="specs-grid reveal">
-    <div class="spec-card">
+  <div class="specs-grid">
+    <div class="spec-card reveal">
       <div class="spec-icon">🏭</div><div class="spec-k">Founded</div><div class="spec-v">2024</div>
       <div class="spec-desc">青岛城阳 · 自主研发基地</div>
     </div>
-    <div class="spec-card">
+    <div class="spec-card reveal reveal-d1">
       <div class="spec-icon">⚙️</div><div class="spec-k">Lines</div><div class="spec-v">2+1</div>
       <div class="spec-desc">2条单晶线 + 1条加工线</div>
     </div>
-    <div class="spec-card">
+    <div class="spec-card reveal reveal-d2">
       <div class="spec-icon">🔥</div><div class="spec-k">Furnaces</div><div class="spec-v">40台</div>
       <div class="spec-desc">1500㎡ · 厂房规模</div>
     </div>
-    <div class="spec-card">
+    <div class="spec-card reveal reveal-d3">
       <div class="spec-icon">💎</div><div class="spec-k">Capacity</div><div class="spec-v">5T/年</div>
       <div class="spec-desc">持续扩产，支持批量供货</div>
     </div>
-    <div class="spec-card">
+    <div class="spec-card reveal reveal-d4">
       <div class="spec-icon">🔬</div><div class="spec-k">R&D</div><div class="spec-v">持续</div>
       <div class="spec-desc">多色系同步研发</div>
     </div>
-    <div class="spec-card">
+    <div class="spec-card reveal reveal-d5">
       <div class="spec-icon">🧠</div><div class="spec-k">AI</div><div class="spec-v">AI+</div>
       <div class="spec-desc">40台炉台持续感知，数据闭环</div>
     </div>
@@ -254,9 +249,9 @@
 
 <!-- BRAND PHOTO -->
 <section class="brand-section">
-  <div class="section-eyebrow">Brand Identity</div>
-  <h2 class="section-title">品牌识别</h2>
-  <div class="brand-photo reveal">
+  <div class="section-eyebrow reveal reveal-d1">Brand Identity</div>
+  <h2 class="section-title reveal reveal-d2">品牌识别</h2>
+  <div class="brand-photo reveal reveal-d3">
     <img src="../assets/photo-selects/round-02/optimized/office-logo-wall.jpg" alt="品牌墙">
   </div>
 </section>

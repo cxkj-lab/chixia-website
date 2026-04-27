@@ -6,6 +6,13 @@
 <title>AI 能力 | 青岛赤瑕科技有限公司</title>
 <link rel="stylesheet" href="../css/shared.css">
 <style>
+  /* ── REVEAL DELAYS ── */
+  .reveal-d1 { transition-delay: 0.10s; }
+  .reveal-d2 { transition-delay: 0.24s; }
+  .reveal-d3 { transition-delay: 0.38s; }
+  .reveal-d4 { transition-delay: 0.52s; }
+  .reveal-d5 { transition-delay: 0.66s; }
+
   .page-header { padding: 120px 60px 60px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0e1a, #060914); }
   .page-header::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(142,31,49,0.2) 0%, transparent 55%); }
   .page-header-inner { position: relative; z-index: 1; }
@@ -52,7 +59,6 @@
   }
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
 
-  /* ── AI HERO GRID ── */
   .ai-hero-row { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 18px; margin-bottom: 18px; }
   .ai-master {
     border-radius: var(--radius-sm); border: 1px solid rgba(213,174,96,0.10);
@@ -74,14 +80,12 @@
   .ai-side-value { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
   .ai-side-note  { font-size: 10px; color: var(--text-3); }
 
-  /* ── AI CARDS ── */
   .ai-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
   .ai-card { border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.025); padding: 20px 16px; }
   .ai-card-tag { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(207,223,246,0.78); margin-bottom: 8px; }
   .ai-card-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
   .ai-card p { font-size: 11px; line-height: 1.8; color: var(--text-3); }
 
-  /* ── AI STREAM ── */
   .ai-stream { margin-top: 18px; border-radius: var(--radius-sm); border: 1px solid rgba(213,174,96,0.10); background: rgba(255,255,255,0.02); overflow: hidden; }
   .ai-stream-row { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 20px; }
   .ai-stream-row + .ai-stream-row { border-top: 1px solid rgba(255,255,255,0.05); }
@@ -100,7 +104,6 @@
   /* ── NAV ACTIVE ── */
   .nav-links a[href="ai.html"] { color: var(--gold) !important; }
 
-  /* Section headers: left-align titles and body text */
   .section-eyebrow, .section-title { text-align: left; }
   .section-lead { margin: 0; }
 
@@ -130,7 +133,7 @@
 
 <!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="page-header-inner">
+  <div class="page-header-inner reveal">
     <div class="section-eyebrow">AI Integration</div>
     <h1>AI 深度接入<em>全链路</em></h1>
     <p>AI 已深度接入研发、生产、财务与行政，40 台炉台持续感知，数据闭环驱动决策。</p>
@@ -139,11 +142,11 @@
 
 <!-- AI MAIN -->
 <section class="ai-section">
-  <div class="section-eyebrow">Core System</div>
-  <h2 class="section-title">智能感知 · 数据闭环</h2>
-  <p class="section-lead">40 台炉台，AI 持续感知生长状态。控制、回写、异常检测，同一主控完成，数据实时回写决策系统。</p>
+  <div class="section-eyebrow reveal">Core System</div>
+  <h2 class="section-title reveal reveal-d1">智能感知 · 数据闭环</h2>
+  <p class="section-lead reveal reveal-d2">40 台炉台，AI 持续感知生长状态。控制、回写、异常检测，同一主控完成，数据实时回写决策系统。</p>
 
-  <div class="ai-shell reveal">
+  <div class="ai-shell reveal reveal-d2">
     <div class="ai-inner">
       <div class="ai-top">
         <div class="ai-pills">
@@ -227,9 +230,9 @@
 
 <!-- CONTROL CABINET PHOTO -->
 <section class="cabinet-section">
-  <div class="section-eyebrow">Production Photos</div>
-  <h2 class="section-title">设备与控制端</h2>
-  <div class="cabinet-photo reveal">
+  <div class="section-eyebrow reveal">Production Photos</div>
+  <h2 class="section-title reveal reveal-d1">设备与控制端</h2>
+  <div class="cabinet-photo reveal reveal-d2">
     <img src="../assets/photo-selects/round-02/optimized/plant-control-cabinet.jpg" alt="设备与控制柜">
     <div class="cabinet-caption">
       <div class="cc-kicker">智能控制</div>
