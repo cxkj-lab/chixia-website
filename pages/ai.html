@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="赤瑕科技AI能力：智能宝石设计、颜色优化、材料分析等人工智能辅助服务。">
+<meta name="keywords" content="宝石AI,智能宝石设计,AI宝石分析,宝石颜色优化,人工智能宝石">
+<meta name="author" content="赤瑕科技">
+<meta name="robots" content="index, follow">
 <title>AI 能力 | 青岛赤瑕科技有限公司</title>
 <link rel="stylesheet" href="../css/shared.css">
 <style>
@@ -13,7 +17,7 @@
   .reveal-d4 { transition-delay: 0.52s; }
   .reveal-d5 { transition-delay: 0.66s; }
 
-  .page-header { padding: 120px 60px 60px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0e1a, #060914); }
+  .page-header { padding: 90px 60px 50px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0e1a, #060914); }
   .page-header::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(142,31,49,0.2) 0%, transparent 55%); }
   .page-header-inner { position: relative; z-index: 1; }
   .page-header h1 { font-family: "Noto Serif SC", serif; font-size: clamp(32px,5vw,56px); font-weight: 900; line-height: 1.2; letter-spacing: 2px; margin-bottom: 14px; }
@@ -21,7 +25,7 @@
   .page-header p { font-size: 15px; line-height: 2; color: var(--text-2); max-width: 620px; }
 
   /* ── AI SHELL ── */
-  .ai-section { padding: 80px 60px; }
+  .ai-section { padding: 60px 60px; }
   .ai-shell {
     border-radius: var(--radius); border: 1px solid rgba(134,184,255,0.14);
     background: linear-gradient(180deg, rgba(14,19,35,0.98), rgba(8,12,24,1));
@@ -93,7 +97,7 @@
   .ai-stream-text  { font-size: 12px; line-height: 1.8; color: var(--text-2); }
 
   /* ── CONTROL CABINET PHOTO ── */
-  .cabinet-section { padding: 80px 60px; }
+  .cabinet-section { padding: 60px 60px; }
   .cabinet-photo { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); margin-top: 48px; }
   .cabinet-photo img { width: 100%; height: auto; max-height: 520px; object-fit: contain; object-position: center; background: #0a0e1a; display: block; }
   .cabinet-caption { padding: 18px 24px; border-top: 1px solid var(--line); }
@@ -113,7 +117,7 @@
     .ai-cards { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 768px) {
-    .page-header { padding: 100px 18px 48px; }
+    .page-header { padding: 80px 18px 40px; }
     .ai-section, .cabinet-section { padding-left: 18px; padding-right: 18px; }
     .ai-cards { grid-template-columns: 1fr; }
     .ai-side-grid { grid-template-columns: 1fr 1fr; }
@@ -242,7 +246,7 @@
   </div>
 </section>
 
-<footer>
+<footer class="reveal">
   <div class="footer-brand"><img src="../assets/logo.png" alt="赤瑕科技" class="footer-logo"><span class="footer-text">青岛赤瑕科技有限公司</span></div>
   <div class="footer-copy">© 2024 Chixia Technology. All rights reserved.</div>
   <div class="footer-links">
@@ -253,7 +257,7 @@
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
-  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.1 });
+  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>

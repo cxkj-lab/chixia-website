@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="帕帕拉恰蓝宝石产品详情：独特的粉橙色蓝宝石，自然日出色泽，高品质培育宝石。">
+<meta name="keywords" content="帕帕拉恰,帕帕拉恰蓝宝石,粉橙色蓝宝石,培育蓝宝石,人造蓝宝石,帕帕拉恰价格">
+<meta name="author" content="赤瑕科技">
+<meta name="robots" content="index, follow">
+<title>帕帕拉恰蓝宝石 | 青岛赤瑕科技有限公司</title>
+<link rel="stylesheet" href="../css/shared.css">
+<style>
+  .page-header {
+    padding: 90px 60px 50px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #0a0e1a, #060914);
+  }
+  .page-header::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 50%, rgba(255,182,193,0.15) 0%, transparent 55%);
+  }
+  .page-header-inner { position: relative; z-index: 1; }
+  .page-header h1 { font-family: "Noto Serif SC", serif; font-size: clamp(32px,5vw,56px); font-weight: 900; line-height: 1.2; letter-spacing: 2px; margin-bottom: 14px; }
+  .page-header h1 em { font-style: normal; color: var(--gold); }
+  .page-header p { font-size: 15px; line-height: 2; color: var(--text-2); max-width: 620px; }
+
+  .reveal-d1 { transition-delay: 0.10s; }
+  .reveal-d2 { transition-delay: 0.24s; }
+  .reveal-d3 { transition-delay: 0.40s; }
+  .reveal-d4 { transition-delay: 0.56s; }
+
+  /* ── HERO SECTION ── */
+  .hero-section { padding: 60px; }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+  }
+  .hero-grid.reverse .hero-visual { order: 2; }
+  .hero-grid.reverse .hero-info { order: 1; }
+  .hero-visual {
+    border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
+    box-shadow: var(--shadow); background: #0a0e1a;
+    aspect-ratio: 4/3;
+  }
+  .hero-visual img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+  }
+  .hero-info > * { will-change: opacity, transform; }
+  .hero-kicker { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .hero-name { font-family: "Noto Serif SC", serif; font-size: 36px; font-weight: 700; margin-bottom: 8px; color: var(--gold-soft); }
+  .hero-name-en { font-size: 14px; color: var(--text-3); margin-bottom: 24px; letter-spacing: 1px; }
+  .hero-desc { font-size: 15px; line-height: 2; color: var(--text-2); margin-bottom: 32px; }
+
+  /* ── SPEC TABLE ── */
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+  .spec-table tr { border-bottom: 1px solid var(--line); }
+  .spec-table td { padding: 14px 0; font-size: 14px; }
+  .spec-table td:first-child { color: var(--gold); letter-spacing: 1.5px; width: 100px; }
+  .spec-table td:last-child { color: var(--text); }
+  .product-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 999px;
+    border: 1px solid var(--line-2); background: rgba(213,174,96,0.06);
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold);
+  }
+
+  /* ── GALLERY SECTION ── */
+  .gallery-section { padding: 60px; background: var(--bg-2); }
+  .gallery-header { text-align: center; margin-bottom: 48px; }
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  }
+  .gallery-item {
+    border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line);
+    aspect-ratio: 4/3; background: #0a0e1a;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .gallery-item:hover { transform: translateY(-6px); border-color: var(--gold); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── COLOR SPECTRUM ── */
+  .spectrum-section { padding: 60px; }
+  .spectrum-header { text-align: center; margin-bottom: 48px; }
+  .spectrum-bar {
+    max-width: 800px; margin: 0 auto;
+    height: 60px; border-radius: 999px;
+    background: linear-gradient(90deg, #ffb6c1, #ff9eb5, #ff8fa3, #ff7a8a, #ff6b7a);
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .spectrum-labels {
+    max-width: 800px; margin: 16px auto 0;
+    display: flex; justify-content: space-between;
+    font-size: 12px; color: var(--text-3); letter-spacing: 1px;
+  }
+  .spectrum-desc {
+    text-align: center; margin-top: 32px;
+    font-size: 14px; line-height: 1.9; color: var(--text-2);
+  }
+
+  /* ── FEATURES SECTION ── */
+  .features-section { padding: 60px; background: var(--bg-2); }
+  .features-header { text-align: center; margin-bottom: 48px; }
+  .features-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .feature-card {
+    padding: 32px 24px; border-radius: var(--radius-sm);
+    border: 1px solid var(--line); background: var(--bg);
+    text-align: center; transition: border-color 0.3s;
+  }
+  .feature-card:hover { border-color: var(--gold); }
+  .feature-icon { font-size: 32px; margin-bottom: 16px; }
+  .feature-title { font-size: 16px; font-weight: 600; color: var(--gold-soft); margin-bottom: 8px; }
+  .feature-desc { font-size: 13px; line-height: 1.7; color: var(--text-2); }
+
+  /* ── CTA ── */
+  .cta-section { padding: 60px; text-align: center; }
+  .cta-title { font-family: "Noto Serif SC", serif; font-size: 28px; font-weight: 700; margin-bottom: 16px; }
+  .cta-desc { font-size: 15px; color: var(--text-2); margin-bottom: 32px; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 32px; border-radius: 999px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+    color: #0a0e1a; font-size: 14px; font-weight: 600; letter-spacing: 1px;
+    text-decoration: none; transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(213,174,96,0.3); }
+
+  .nav-links a[href="padparadscha.html"] { color: var(--gold) !important; }
+
+  @media (max-width: 1100px) {
+    .hero-grid, .hero-grid.reverse { grid-template-columns: 1fr; gap: 32px; }
+    .hero-grid.reverse .hero-visual, .hero-grid.reverse .hero-info { order: unset; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .page-header { padding: 80px 18px 40px; }
+    .hero-section, .gallery-section, .spectrum-section, .features-section, .cta-section { padding: 48px 18px; }
+    .features-grid { grid-template-columns: 1fr; }
+  }
+  /* ── MATERIAL PARAMS SECTION ── */
+  .params-section {
+    padding: 80px 60px;
+    background: linear-gradient(180deg, #080c18 0%, #0a0e1a 100%);
+    border-top: 1px solid rgba(212,168,83,0.12);
+  }
+  .params-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--gold); letter-spacing: 2px;
+    text-align: center; margin-bottom: 40px;
+  }
+  .params-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .param-category {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(212,168,83,0.18);
+    border-radius: 10px; padding: 22px 20px;
+  }
+  .param-cat-label {
+    font-size: 11px; letter-spacing: 2px;
+    color: var(--gold); margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(212,168,83,0.2);
+  }
+  .param-item {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 13px;
+  }
+  .param-item:last-child { border-bottom: none; }
+  .param-name { color: var(--text-3); white-space: nowrap; }
+  .param-value { color: var(--text-1); font-weight: 500; text-align: right; }
+  .param-category:hover {
+    border-color: rgba(212,168,83,0.55);
+    background: rgba(212,168,83,0.05);
+  }
+  @media (max-width: 900px) {
+    .params-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .params-section { padding: 60px 24px; }
+    .params-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="赤瑕科技" class="nav-logo-img"><span class="nav-logo-text">赤瑕科技</span></a>
+  <div class="nav-links">
+    <a href="about.html">关于</a>
+    <a href="products.html">产品</a>
+    <a href="factory.html">工厂</a>
+    <a href="jewelry.html">珠宝</a>
+    <a href="tech.html">技术</a>
+    <a href="ai.html">AI 能力</a>
+    <a href="contact.html" class="nav-cta">联系我们</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner reveal">
+    <div class="section-eyebrow">Padparadscha Sapphire</div>
+    <h1><em>帕帕拉恰</em> · 粉橙蓝宝石</h1>
+    <p>粉橙双色蓝宝石，Ni + Cr 共掺杂实现独特色调。储备完成、试产阶段，批量供货筹备中。</p>
+  </div>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="hero-grid reverse">
+    <div class="hero-visual reveal reveal-d1">
+      <img src="../assets/cl5.jpg" alt="帕帕拉恰蓝宝石">
+    </div>
+    <div class="hero-info">
+      <div class="reveal reveal-d2">
+        <div class="hero-kicker">重点储备 · Strategic Reserve</div>
+        <div class="hero-name">帕帕拉恰 · Padparadscha</div>
+        <div class="hero-name-en">Cr+Ni co-doped Al₂O₃ · Sunrise Sapphire</div>
+      </div>
+      <p class="hero-desc reveal reveal-d3">
+        帕帕拉恰是最稀有的蓝宝石品种之一，以粉橙双色著称。赤瑕通过 Ni + Cr 共同掺杂技术，实现粉橙比例可调，可按客户需求定制色调。目前已完成技术储备，进入试产阶段，批量供货筹备中。
+      </p>
+      <table class="spec-table reveal reveal-d4">
+        <tr><td>颜色</td><td>粉橙双色，比例可调</td></tr>
+        <tr><td>工艺</td><td>温梯法，Ni + Cr 共同掺杂</td></tr>
+        <tr><td>尺寸</td><td>3mm ~ 12mm 可定制</td></tr>
+        <tr><td>进度</td><td>储备完成 · 试产阶段</td></tr>
+        <tr><td>年产能</td><td>待扩产 · 批量供货筹备中</td></tr>
+      </table>
+      <div class="product-badge reveal reveal-d4">● 储备阶段</div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- MATERIAL PROPERTIES SECTION -->
+
+<!-- GALLERY SECTION -->
+<section class="gallery-section">
+  <div class="gallery-header reveal">
+    <div class="section-eyebrow">Gallery</div>
+    <h2 class="section-title">产品图库</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item reveal reveal-d1"><img src="../assets/cl5.jpg" alt="帕帕拉恰 1"></div>
+    <div class="gallery-item reveal reveal-d2"><img src="../assets/cl6.jpg" alt="帕帕拉恰 2"></div>
+  </div>
+</section>
+
+<!-- COLOR SPECTRUM SECTION -->
+<section class="spectrum-section">
+  <div class="spectrum-header reveal">
+    <div class="section-eyebrow">Color Spectrum</div>
+    <h2 class="section-title">色阶范围</h2>
+  </div>
+  <div class="spectrum-bar reveal"></div>
+  <div class="spectrum-labels">
+    <span>浅粉</span>
+    <span>粉橙</span>
+    <span>深粉</span>
+  </div>
+  <p class="spectrum-desc reveal">
+    通过调节 Ni/Cr 掺杂比例，可实现从浅粉到深粉的完整色阶覆盖，满足不同应用场景需求。
+  </p>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="features-section">
+  <div class="features-header reveal">
+    <div class="section-eyebrow">Why Chixia</div>
+    <h2 class="section-title">核心优势</h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal reveal-d1">
+      <div class="feature-icon">🎨</div>
+      <div class="feature-title">颜色可调</div>
+      <p class="feature-desc">Ni/Cr 比例精确控制，粉橙色调按需定制</p>
+    </div>
+    <div class="feature-card reveal reveal-d2">
+      <div class="feature-icon">🔬</div>
+      <div class="feature-title">技术领先</div>
+      <p class="feature-desc">共掺杂工艺成熟，品质稳定可控</p>
+    </div>
+    <div class="feature-card reveal reveal-d3">
+      <div class="feature-icon">📦</div>
+      <div class="feature-title">定制供应</div>
+      <p class="feature-desc">尺寸 3-12mm 可定制，批量供货筹备中</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="reveal">
+    <h2 class="cta-title">了解更多产品信息</h2>
+    <p class="cta-desc">欢迎联系我们获取详细产品规格与报价</p>
+    <a href="contact.html" class="cta-btn">联系我们 →</a>
+  </div>
+</section>
+
+<footer class="reveal">
+  <div class="footer-brand"><img src="../assets/logo.png" alt="赤瑕科技" class="footer-logo"><span class="footer-text">青岛赤瑕科技有限公司</span></div>
+  <div class="footer-copy">© 2024 Chixia Technology. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="about.html">关于</a><a href="products.html">产品</a><a href="factory.html">工厂</a><a href="jewelry.html">珠宝</a><a href="tech.html">技术</a><a href="ai.html">AI</a><a href="contact.html">联系</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# robots.txt for 赤瑕科技官网
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cxkj-lab.github.io/chixia-website/sitemap.xml
+
+# 禁止抓取的路径（如有需要）
+# Disallow: /private/

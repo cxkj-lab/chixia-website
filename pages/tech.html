@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="赤瑕科技技术优势：先进的宝石培育技术，提拉法生长工艺，材料科学研发实力。">
+<meta name="keywords" content="宝石培育技术,提拉法生长,人工晶体技术,宝石材料科学,实验室宝石技术">
+<meta name="author" content="赤瑕科技">
+<meta name="robots" content="index, follow">
 <title>技术优势 | 青岛赤瑕科技有限公司</title>
 <link rel="stylesheet" href="../css/shared.css">
 <style>
@@ -13,7 +17,7 @@
   .reveal-d4 { transition-delay: 0.52s; }
   .reveal-d5 { transition-delay: 0.66s; }
 
-  .page-header { padding: 120px 60px 60px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0e1a, #060914); }
+  .page-header { padding: 90px 60px 50px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0e1a, #060914); }
   .page-header::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(142,31,49,0.2) 0%, transparent 55%); }
   .page-header-inner { position: relative; z-index: 1; }
   .page-header h1 { font-family: "Noto Serif SC", serif; font-size: clamp(32px,5vw,56px); font-weight: 900; line-height: 1.2; letter-spacing: 2px; margin-bottom: 14px; }
@@ -21,7 +25,7 @@
   .page-header p { font-size: 15px; line-height: 2; color: var(--text-2); max-width: 620px; }
 
   /* ── RADAR SECTION ── */
-  .radar-section { padding: 80px 60px; }
+  .radar-section { padding: 60px 60px; }
   .radar-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 48px; }
   .radar-wrap {
     border-radius: var(--radius); border: 1px solid var(--line);
@@ -37,7 +41,7 @@
   .dot-blue   { background: rgba(100,148,210,0.75); }
 
   /* ── ADVANTAGES ── */
-  .adv-section { padding: 80px 60px; background: var(--bg-2); }
+  .adv-section { padding: 60px 60px; background: var(--bg-2); }
   .adv-section-header { margin-bottom: 48px; }
   .adv-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
   .adv-card {
@@ -56,7 +60,7 @@
   .adv-card p  { font-size: 13px; line-height: 1.85; color: var(--text-2); margin-top: 10px; }
 
   /* ── SPECS ── */
-  .specs-section { padding: 80px 60px; }
+  .specs-section { padding: 60px 60px; }
   .specs-header { margin-bottom: 48px; }
   .specs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
   .spec-card {
@@ -70,7 +74,7 @@
   .spec-desc { font-size: 12px; color: var(--text-2); line-height: 1.7; }
 
   /* ── BRAND PHOTO ── */
-  .brand-section { padding: 80px 60px; background: var(--bg-2); }
+  .brand-section { padding: 60px 60px; background: var(--bg-2); }
   .brand-photo {
     border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);
     box-shadow: var(--shadow); margin-top: 48px;
@@ -99,7 +103,7 @@
     .specs-grid { grid-template-columns: repeat(2,1fr); }
   }
   @media (max-width: 768px) {
-    .page-header { padding: 100px 18px 48px; }
+    .page-header { padding: 80px 18px 40px; }
     .radar-section, .adv-section, .specs-section, .brand-section { padding-left: 18px; padding-right: 18px; }
     .specs-grid { grid-template-columns: 1fr 1fr; }
   }
@@ -256,7 +260,7 @@
   </div>
 </section>
 
-<footer>
+<footer class="reveal">
   <div class="footer-brand"><img src="../assets/logo.png" alt="赤瑕科技" class="footer-logo"><span class="footer-text">青岛赤瑕科技有限公司</span></div>
   <div class="footer-copy">© 2024 Chixia Technology. All rights reserved.</div>
   <div class="footer-links">
@@ -267,7 +271,7 @@
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
-  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.1 });
+  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>

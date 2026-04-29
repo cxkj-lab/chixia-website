@@ -3,11 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="赤瑕科技产品中心：鸽血红红宝石、帕帕拉恰蓝宝石等高品质培育彩色宝石，提供多种规格与定制服务。">
+<meta name="keywords" content="培育红宝石,鸽血红宝石,帕帕拉恰蓝宝石,培育彩宝产品,人造红宝石价格">
+<meta name="author" content="赤瑕科技">
+<meta name="robots" content="index, follow">
 <title>产品中心 | 青岛赤瑕科技有限公司</title>
 <link rel="stylesheet" href="../css/shared.css">
 <style>
   .page-header {
-    padding: 120px 60px 60px; position: relative; overflow: hidden;
+    padding: 90px 60px 50px; position: relative; overflow: hidden;
     background: linear-gradient(135deg, #0a0e1a, #060914);
   }
   .page-header::before {
@@ -26,11 +30,11 @@
   .reveal-d4 { transition-delay: 0.56s; }
 
   /* ── PRODUCT SECTIONS ── */
-  .product-section { padding: 80px 60px; }
+  .product-section { padding: 60px 60px; }
   .product-section:nth-child(even) { background: var(--bg-2); }
   .product-split {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
-    margin-top: 48px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    margin-top: 36px;
   }
   .product-split.reverse { grid-template-columns: 1fr 1fr; }
   .product-split.reverse .product-visual { order: 2; }
@@ -60,8 +64,50 @@
   .spec-table td:last-child { color: var(--text); }
   .product-badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 22px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(213,174,96,0.05); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); }
 
+  /* ── INTRO CARDS ── */
+  .intro-cards { padding: 60px 60px; }
+  .intro-cards-header { text-align: center; margin-bottom: 36px; }
+  .intro-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 0; }
+  .intro-card {
+    display: grid; grid-template-columns: 200px 1fr;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-2);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .intro-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .intro-card.reverse { grid-template-columns: 1fr 200px; }
+  .intro-card.reverse .intro-card-img { order: 2; }
+  .intro-card.reverse .intro-card-body { order: 1; }
+  .intro-card-img { overflow: hidden; background: #0a0e1a; }
+  .intro-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .intro-card-body { padding: 22px 20px; display: flex; flex-direction: column; justify-content: center; }
+  .intro-card-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .intro-card-title {
+    font-family: "Noto Serif SC", serif; font-size: 24px; font-weight: 700;
+    color: #ffffff; margin-bottom: 8px; line-height: 1.3; text-decoration: none;
+  }
+  .intro-card-en { font-size: 13px; color: var(--text-2); margin-bottom: 16px; letter-spacing: 1px; text-decoration: none; }
+  .intro-card-desc { font-size: 15px; line-height: 1.9; color: var(--text); margin-bottom: 20px; flex: 1; text-decoration: none; }
+  .intro-card-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; letter-spacing: 1.5px; color: var(--gold);
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    width: fit-content;
+    transition: background 0.3s, color 0.3s;
+  }
+  .intro-card-link:hover { background: var(--gold); color: #0a0e1a; }
+  .intro-card-link::after { content: "→"; }
+
   /* ── FAMILY SECTION ── */
-  .family-section { padding: 80px 60px; }
+  .family-section { padding: 60px 60px; }
   .family-header { margin-bottom: 48px; text-align: center; }
   .family-content {
     max-width: 680px; margin: 0 auto;
@@ -107,9 +153,12 @@
     .product-split, .product-split.reverse { grid-template-columns: 1fr; gap: 32px; }
     .product-split.reverse .product-visual, .product-split.reverse .product-info { order: unset; }
     .family-content { padding: 40px 28px 36px; }
+    .intro-row { grid-template-columns: 1fr; gap: 24px; }
+    .intro-card, .intro-card.reverse { grid-template-columns: 160px 1fr; }
+    .intro-card.reverse .intro-card-img, .intro-card.reverse .intro-card-body { order: unset; }
   }
   @media (max-width: 768px) {
-    .page-header { padding: 100px 18px 48px; }
+    .page-header { padding: 80px 18px 40px; }
   }
 </style>
 </head>
@@ -180,8 +229,36 @@
       <div class="product-badge reveal reveal-d3">● 储备阶段</div>
     </div>
     <div class="product-visual reveal reveal-d2">
-      <img src="../assets/cl5.jpg" alt="帕帕拉恰">
+      <img src="../assets/pplq.jpg" alt="帕帕拉恰">
     </div>
+  </div>
+</section>
+
+<!-- INTRO CARDS -->
+<section class="intro-cards">
+  <div class="intro-cards-header reveal">
+    <div class="section-eyebrow">Explore More</div>
+    <h2 class="section-title">深入了解</h2>
+  </div>
+  <div class="intro-row">
+    <a href="ruby.html" class="intro-card reveal reveal-d1">
+      <div class="intro-card-img"><img src="../assets/cl7.jpg" alt="鸽血红"></div>
+      <div class="intro-card-body">
+        <div class="intro-card-label">Pigeon Blood Ruby</div>
+        <div class="intro-card-title">鸽血红</div>
+        <div class="intro-card-en">Cr:Al₂O₃ · 国内领先</div>
+        <p class="intro-card-desc">Cr 元素精准掺杂，呈现纯正鸽血红。克拉级与小尺寸双线并行，年产能 5 吨，填补小尺寸国内空白。</p>
+      </div>
+    </a>
+    <a href="padparadscha.html" class="intro-card reverse reveal reveal-d2">
+      <div class="intro-card-img"><img src="../assets/cl8.jpg" alt="帕帕拉恰"></div>
+      <div class="intro-card-body">
+        <div class="intro-card-label">Padparadscha Sapphire</div>
+        <div class="intro-card-title">帕帕拉恰</div>
+        <div class="intro-card-en">Cr+Ni co-doped · 储备阶段</div>
+        <p class="intro-card-desc">粉橙双色蓝宝石，Ni + Cr 共掺杂实现独特色调。储备完成、试产阶段，批量供货筹备中。</p>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -201,7 +278,7 @@
   </div>
 </section>
 
-<footer>
+<footer class="reveal">
   <div class="footer-brand"><img src="../assets/logo.png" alt="赤瑕科技" class="footer-logo"><span class="footer-text">青岛赤瑕科技有限公司</span></div>
   <div class="footer-copy">© 2024 Chixia Technology. All rights reserved.</div>
   <div class="footer-links">
@@ -212,7 +289,7 @@
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
-  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.1 });
+  const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('vis'); }), { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>

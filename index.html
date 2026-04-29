@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="赤瑕科技专注于培育彩色宝石，提供鸽血红红宝石、帕帕拉恰蓝宝石等高品质实验室培育宝石，技术驱动，品质卓越。">
+<meta name="keywords" content="培育红宝石,鸽血红,帕帕拉恰,人造宝石,实验室宝石,培育彩宝,红宝石,蓝宝石,赤瑕科技">
+<meta name="author" content="赤瑕科技">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="赤瑕科技 | 培育彩宝 · 技术驱动者">
+<meta property="og:description" content="赤瑕科技专注于培育彩色宝石，提供鸽血红红宝石、帕帕拉恰蓝宝石等高品质实验室培育宝石。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cxkj-lab.github.io/chixia-website/">
+<meta property="og:image" content="https://cxkj-lab.github.io/chixia-website/assets/hp/hero-bg.jpg">
 <title>赤瑕科技 | 培育彩宝 · 技术驱动者</title>
 <link rel="stylesheet" href="css/shared.css">
 <style>
@@ -261,7 +270,7 @@
   
   /* ── CTA SECTION ── */
   .cta-section {
-    padding: 80px 60px;
+    padding: 60px 60px;
     background: linear-gradient(180deg, var(--bg-2), var(--bg));
     text-align: center;
   }
@@ -279,9 +288,49 @@
     display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
   }
   
+
+  /* ── VIDEO SECTION ── */
+  .video-section {
+    position: relative;
+    padding: 80px 0 0;
+    background: linear-gradient(180deg, var(--bg), #050810, var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+  .video-section::before {
+    content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 60%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(213,174,96,0.3), transparent);
+  }
+  .video-label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .video-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: clamp(24px, 3vw, 36px); font-weight: 700;
+    letter-spacing: 3px; color: var(--text);
+    margin-bottom: 40px;
+  }
+  .video-wrap {
+    position: relative; width: 100%; margin: 0 auto;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+  }
+  .video-wrap video {
+    width: 100%; height: 100%; object-fit: contain;
+    display: block; background: #000;
+  }
+  .video-wrap::after {
+    content: ""; position: absolute; inset: 0;
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.4);
+    pointer-events: none;
+  }
+
   @media (max-width: 1100px) {
     .slider-section { height: 65vh; min-height: 500px; }
     .slide-content { left: 50px; bottom: 100px; }
+    .video-section { padding: 60px 0 0; }
     .product-section, .cta-section { padding-left: 30px; padding-right: 30px; }
     .product-grid { grid-template-columns: repeat(2, 1fr); }
   }
@@ -296,6 +345,7 @@
     .slider-arrow svg { width: 20px; height: 20px; }
     .slider-nav.prev { left: 16px; }
     .slider-nav.next { right: 16px; }
+    .video-section { padding: 50px 0 0; }
     .product-section, .cta-section { padding-left: 20px; padding-right: 20px; }
     .product-grid { grid-template-columns: 1fr; }
   }
@@ -326,21 +376,21 @@
   <div class="hero-bg-img" id="heroBg"></div>
   <div class="hero-bg-overlay"></div>
   <div class="hero-content">
-    <div class="hero-company-line">青岛赤瑕科技有限公司</div>
-    <h1 class="hero-title">晶体决定上限<br><em>培育彩宝</em>技术驱动者</h1>
-    <p class="hero-sub">以温梯法长晶工艺为核心，突破大体积鸽血红培育瓶颈<br>从材料到成品，打通长晶、加工、分级全链路</p>
-    <div class="hero-actions">
+    <div class="hero-company-line reveal reveal-d1">青岛赤瑕科技有限公司</div>
+    <h1 class="hero-title reveal reveal-d2">晶体决定上限<br><em>培育彩宝</em>技术驱动者</h1>
+    <p class="hero-sub reveal reveal-d3">以温梯法长晶工艺为核心，突破大体积鸽血红培育瓶颈<br>从材料到成品，打通长晶、加工、分级全链路</p>
+    <div class="hero-actions reveal reveal-d4">
       <a href="pages/about.html" class="btn-primary">了解赤瑕</a>
       <a href="pages/contact.html" class="btn-ghost">商务合作</a>
     </div>
-    <div class="hero-stats">
+    <div class="hero-stats reveal reveal-d5">
       <div class="hero-stat"><div class="hero-stat-num">2024</div><div class="hero-stat-label">创立年份</div><div class="hero-stat-desc">青岛城阳</div></div>
       <div class="hero-stat"><div class="hero-stat-num">40台</div><div class="hero-stat-label">长晶炉规模</div><div class="hero-stat-desc">1500㎡ 厂房</div></div>
       <div class="hero-stat"><div class="hero-stat-num">5T/年</div><div class="hero-stat-label">年产能</div><div class="hero-stat-desc">稳定扩产中</div></div>
       <div class="hero-stat"><div class="hero-stat-num">~20人</div><div class="hero-stat-label">核心团队</div><div class="hero-stat-desc">AI 深度接入</div></div>
     </div>
   </div>
-  <div class="hero-scroll">
+  <div class="hero-scroll reveal reveal-d6">
     <div class="hero-scroll-line"></div>
     SCROLL
   </div>
@@ -441,20 +491,32 @@
   </div>
 </section>
 
+
+<!-- VIDEO SECTION -->
+<section class="video-section">
+  <div class="video-label reveal">Process Video</div>
+  <h3 class="video-title reveal reveal-d1">长晶工艺实录</h3>
+  <div class="video-wrap reveal reveal-d2">
+    <video controls playsinline preload="metadata" poster="assets/photo-selects/round-02/optimized/plant-furnace-row.jpg">
+      <source src="assets/sp.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
 <!-- PRODUCT SHOWCASE -->
 
 <!-- CTA SECTION -->
 <section class="cta-section">
-  <h3 class="cta-title">期待与您合作</h3>
-  <p class="cta-desc">赤瑕科技诚邀珠宝品牌、加工商、代理商洽谈合作。</p>
-  <div class="cta-btns">
+  <h3 class="cta-title reveal">期待与您合作</h3>
+  <p class="cta-desc reveal reveal-d1">赤瑕科技诚邀珠宝品牌、加工商、代理商洽谈合作。</p>
+  <div class="cta-btns reveal reveal-d2">
     <a href="pages/contact.html" class="btn-primary">联系我们</a>
     <a href="pages/products.html" class="btn-ghost">查看产品</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="reveal">
   <div class="footer-brand">
     <img src="assets/logo.png" alt="赤瑕科技" class="footer-logo">
     <span class="footer-text">青岛赤瑕科技有限公司</span>
@@ -485,11 +547,25 @@
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
 
+  // Reveal animation
+  (function() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('vis');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  })();
+
   // Hero parallax
   const heroBg = document.getElementById('heroBg');
   if (heroBg) {
     window.addEventListener('scroll', () => { heroBg.style.transform = `translateY(${scrollY * 0.15}px)`; }, { passive: true });
   }
+
 
   // Slider
   const slider = {
